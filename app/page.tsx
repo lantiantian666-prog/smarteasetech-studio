@@ -1,25 +1,23 @@
 export default function Home() {
   return (
-    <main className="min-h-screen text-white bg-black relative overflow-hidden">
+    <main className="min-h-screen text-white relative overflow-hidden">
 
       {/* =========================
-          BACKGROUND (LOCKED)
+          BACKGROUND (RESTORE ORIGINAL)
       ========================= */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-black" />
 
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(0,255,180,0.12),transparent_55%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(0,255,180,0.14),transparent_55%)]" />
 
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom,_rgba(120,80,255,0.10),transparent_60%)]" />
       </div>
 
-      {/* =========================
-          NAV
-      ========================= */}
-      <header className="fixed top-0 left-0 w-full z-50 backdrop-blur-xl bg-black/40 border-b border-white/10">
-        <div className="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+      {/* NAV */}
+      <header className="fixed top-0 left-0 w-full z-50 backdrop-blur-xl bg-black/30 border-b border-white/10">
+        <div className="max-w-5xl mx-auto px-6 py-4 flex justify-between">
 
-          <div className="font-semibold tracking-tight">
+          <div className="font-semibold">
             SmartEaseTech Studio
           </div>
 
@@ -32,44 +30,30 @@ export default function Home() {
         </div>
       </header>
 
-      {/* =========================
-          HERO (APPLE STYLE)
-      ========================= */}
+      {/* HERO */}
       <section className="min-h-screen flex items-center justify-center px-6 pt-24">
         <div className="text-center max-w-3xl">
 
-          <h1 className="text-5xl md:text-6xl font-semibold tracking-tight">
+          <h1 className="text-5xl md:text-6xl font-semibold">
             SmartEaseTech Studio
           </h1>
 
-          <p className="mt-6 text-white/60 text-lg">
+          <p className="mt-6 text-white/60">
             Independent iOS App Developer
           </p >
 
-          <p className="mt-4 text-white/40 text-sm leading-relaxed">
-            Science-based, privacy-first applications designed for clarity, precision, and long-term usability.
+          <p className="mt-4 text-white/40 text-sm">
+            Privacy-first · Science-based · Long-term design
           </p >
-
-          {/* APP STORE BUTTON (ONLY HERE) */}
-          <div className="mt-10 flex justify-center">
-            <a
-              href="#"
-              className="px-7 py-3 rounded-full bg-white text-black font-medium hover:scale-[1.02] transition"
-            >
-               Download on the App Store
-            </a >
-          </div>
 
         </div>
       </section>
 
-      {/* =========================
-          APP SECTION
-      ========================= */}
+      {/* APP SECTION */}
       <section id="app" className="py-24 px-6 border-t border-white/10">
         <div className="max-w-5xl mx-auto">
 
-          <h2 className="text-2xl md:text-3xl font-semibold">
+          <h2 className="text-2xl font-semibold">
             Featured App
           </h2>
 
@@ -83,54 +67,57 @@ export default function Home() {
               Science-based Pet Feeding & Health System
             </p >
 
-            <p className="mt-6 text-white/40 text-sm leading-relaxed">
-              Calculates precise feeding needs and tracks long-term health records for pets with privacy-first design.
+            <p className="mt-6 text-white/40 text-sm">
+              Calculates precise feeding needs and builds long-term pet health tracking.
             </p >
 
             {/* =========================
-                IMAGES (NO CROP FIXED)
+                IMAGES
             ========================= */}
             <div className="mt-10 grid md:grid-cols-3 gap-6">
 
               {["/1.png", "/9.png", "/10.png"].map((img) => (
-                <div
-                  key={img}
-                  className="rounded-2xl border border-white/10 bg-white/5 p-3 overflow-hidden"
-                >
+                <div key={img} className="rounded-2xl overflow-hidden border border-white/10 bg-white/5">
                   <img
                     src={img}
-                    alt="app screenshot"
                     className="w-full h-auto object-contain block"
+                    alt="app"
                   />
                 </div>
               ))}
 
             </div>
 
+            {/* =========================
+                APP STORE BUTTON (FIXED POSITION)
+            ========================= */}
+            <div className="mt-10 flex justify-center">
+              <a
+                href="#"
+                className="px-7 py-3 rounded-full bg-white text-black font-medium hover:scale-[1.02] transition"
+              >
+                 Download on the App Store
+              </a >
+            </div>
+
           </div>
         </div>
       </section>
 
-      {/* =========================
-          PHILOSOPHY
-      ========================= */}
-      <section id="philosophy" className="py-24 px-6 border-t border-white/10">
-        <div className="max-w-5xl mx-auto text-center">
+      {/* PHILOSOPHY */}
+      <section id="philosophy" className="py-24 px-6 border-t border-white/10 text-center">
 
-          <h2 className="text-2xl font-semibold">
-            Philosophy
-          </h2>
+        <h2 className="text-2xl font-semibold">
+          Philosophy
+        </h2>
 
-          <p className="mt-6 text-white/50 text-sm">
-            Smart · Ease · Simple · Elegant · Safe · Empower
-          </p >
+        <p className="mt-6 text-white/50 text-sm">
+          Smart · Ease · Simple · Elegant · Safe · Empower
+        </p >
 
-        </div>
       </section>
 
-      {/* =========================
-          CONTACT
-      ========================= */}
+      {/* CONTACT */}
       <section id="contact" className="py-24 px-6 border-t border-white/10 text-center">
 
         <h2 className="text-3xl font-semibold">
@@ -143,9 +130,7 @@ export default function Home() {
 
       </section>
 
-      {/* =========================
-          FOOTER
-      ========================= */}
+      {/* FOOTER */}
       <footer className="py-10 text-center text-white/40 text-sm border-t border-white/10">
 
         <div>SmartEaseTech Studio</div>
@@ -164,7 +149,7 @@ export default function Home() {
             className="hover:text-white"
             target="_blank"
           >
-            Terms of Use
+            Terms
           </a >
         </div>
 
