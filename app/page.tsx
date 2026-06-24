@@ -2,8 +2,8 @@ export default function Home() {
   return (
     <main className="min-h-screen text-white relative overflow-hidden bg-black">
 
-      {/* 🌿 GREEN BRAND BACKGROUND */}
-      <div className="absolute inset-0">
+      {/* 🌿 BRAND GREEN BACKGROUND */}
+      <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(0,255,180,0.14),transparent_55%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom,_rgba(120,80,255,0.10),transparent_60%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(0,200,160,0.08),transparent_70%)]" />
@@ -25,8 +25,9 @@ export default function Home() {
       </header>
 
       {/* HERO */}
-      <section className="relative min-h-screen flex items-center justify-center px-6 pt-24">
-        <div className="text-center max-w-3xl z-10">
+      <section className="relative min-h-screen flex items-center justify-center px-6 pt-24 z-10">
+        <div className="text-center max-w-3xl">
+
           <h1 className="text-5xl md:text-6xl font-semibold tracking-tight">
             Smart, Simple, Trusted Apps
           </h1>
@@ -36,22 +37,37 @@ export default function Home() {
           </p >
 
           <p className="mt-4 text-white/40 text-sm leading-relaxed">
-            We build science-based, privacy-first iOS applications designed for clarity, precision, and long-term usability.
+            Science-based, privacy-first applications designed for clarity, precision, and long-term usability.
           </p >
+
+          {/* 🟢 APP STORE BUTTON（已恢复） */}
+          <div className="mt-10 flex justify-center">
+            <a
+              href="#"
+              className="
+                px-7 py-3
+                rounded-full
+                bg-white text-black
+                font-medium
+                shadow-lg
+                hover:scale-[1.02]
+                transition
+              "
+            >
+               Download on the App Store
+            </a >
+          </div>
+
         </div>
       </section>
 
       {/* PHILOSOPHY */}
-      <section id="philosophy" className="py-28 px-6 border-t border-white/10">
+      <section id="philosophy" className="py-28 px-6 border-t border-white/10 relative z-10">
         <div className="max-w-5xl mx-auto">
 
           <h2 className="text-2xl md:text-3xl font-semibold">
             Brand Philosophy
           </h2>
-
-          <p className="mt-6 text-white/50 text-sm leading-relaxed">
-            Smart · Ease — Simple · Elegant — Safe · Empower
-          </p >
 
           <div className="mt-10 grid md:grid-cols-3 gap-6">
 
@@ -72,7 +88,7 @@ export default function Home() {
             <div className="p-6 rounded-2xl border border-white/10 bg-white/5">
               <h3>Safe · Empower</h3>
               <p className="text-white/50 text-sm mt-2">
-                Privacy-first, trust-driven experiences.
+                Privacy-first, trust-driven design.
               </p >
             </div>
 
@@ -82,7 +98,7 @@ export default function Home() {
       </section>
 
       {/* APP */}
-      <section id="app" className="py-28 px-6 border-t border-white/10">
+      <section id="app" className="py-28 px-6 border-t border-white/10 relative z-10">
         <div className="max-w-5xl mx-auto">
 
           <h2 className="text-2xl md:text-3xl font-semibold">
@@ -100,10 +116,10 @@ export default function Home() {
             </p >
 
             <p className="mt-6 text-white/40 text-sm leading-relaxed">
-              Calculates precise feeding needs, tracks pet health data, and builds a complete care lifecycle with privacy-first design.
+              Calculates precise feeding needs and tracks long-term pet health data with a privacy-first architecture.
             </p >
 
-            {/* 🟢 APPLE-STYLE IMAGE GRID */}
+            {/* 🟢 APPLE-LEVEL IMAGE GRID (FIXED + NO CROP) */}
             <div className="mt-12 grid md:grid-cols-3 gap-8">
 
               {["/1.png", "/9.png", "/10.png"].map((img) => (
@@ -135,7 +151,7 @@ export default function Home() {
       </section>
 
       {/* CONTACT */}
-      <section id="contact" className="py-28 px-6 border-t border-white/10 text-center">
+      <section id="contact" className="py-28 px-6 border-t border-white/10 text-center relative z-10">
 
         <h2 className="text-3xl font-semibold">
           Contact
@@ -147,8 +163,8 @@ export default function Home() {
 
       </section>
 
-      {/* FOOTER */}
-      <footer className="py-10 text-center text-white/40 text-sm border-t border-white/10">
+      {/* FOOTER (FULL FIXED + CLICK SAFE) */}
+      <footer className="relative z-50 py-10 text-center text-white/40 text-sm border-t border-white/10 bg-black/20 backdrop-blur-xl">
 
         <div className="font-medium">SmartEaseTech</div>
 
@@ -156,12 +172,13 @@ export default function Home() {
           Smart · Simple · Safe
         </div>
 
-        {/* LEGAL LINKS */}
+        {/* LEGAL LINKS (CLICK GUARANTEED) */}
         <div className="mt-6 flex justify-center gap-6 text-white/40 text-sm">
           <a
             href="https://hazel-ray-a96.notion.site/Support-Privacy-389626d5f29a80e0bf7bdbee5cd89c31"
             target="_blank"
-            className="hover:text-white"
+            rel="noopener noreferrer"
+            className="hover:text-white cursor-pointer"
           >
             Privacy Policy
           </a >
@@ -169,7 +186,8 @@ export default function Home() {
           <a
             href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/"
             target="_blank"
-            className="hover:text-white"
+            rel="noopener noreferrer"
+            className="hover:text-white cursor-pointer"
           >
             Terms of Use
           </a >
