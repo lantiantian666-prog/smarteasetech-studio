@@ -2,19 +2,19 @@ export default function Home() {
   return (
     <main className="min-h-screen text-white relative overflow-hidden bg-black">
 
-      {/* 🌿 BRAND GREEN BACKGROUND (DO NOT REMOVE) */}
+      {/* 🌿 GREEN BACKGROUND */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(0,255,180,0.14),transparent_55%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom,_rgba(120,80,255,0.10),transparent_60%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(0,200,160,0.08),transparent_70%)]" />
       </div>
 
-      {/* NAV BAR */}
+      {/* NAV */}
       <header className="fixed top-0 left-0 w-full z-50 backdrop-blur-xl bg-black/30 border-b border-white/10">
         <div className="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
-          
-          {/* BRAND NAME (RESTORED) */}
-          <div className="font-medium tracking-tight">
+
+          {/* ✔ 工作室名称（你要的） */}
+          <div className="font-semibold tracking-tight text-white">
             SmartEaseTech Studio
           </div>
 
@@ -26,26 +26,45 @@ export default function Home() {
         </div>
       </header>
 
-      {/* HERO SECTION */}
+      {/* HERO */}
       <section className="relative min-h-screen flex items-center justify-center px-6 pt-24 z-10">
         <div className="text-center max-w-3xl">
 
+          {/* ✔ 修正：这里必须是工作室名 */}
           <h1 className="text-5xl md:text-6xl font-semibold tracking-tight">
-            Smart · Simple · Trusted Apps
+            SmartEaseTech Studio
           </h1>
 
           <p className="mt-6 text-white/60 text-lg">
-            Independent iOS Developer
+            Independent iOS App Developer
           </p >
 
           <p className="mt-4 text-white/40 text-sm leading-relaxed">
             Science-based, privacy-first applications designed for clarity, precision, and long-term usability.
           </p >
 
+          {/* ✔ App Store按钮（正确位置） */}
+          <div className="mt-10 flex justify-center">
+            <a
+              href="#"
+              className="
+                px-7 py-3
+                rounded-full
+                bg-white text-black
+                font-medium
+                shadow-lg
+                hover:scale-[1.02]
+                transition
+              "
+            >
+               Download on the App Store
+            </a >
+          </div>
+
         </div>
       </section>
 
-      {/* APP SECTION */}
+      {/* APP */}
       <section id="app" className="py-28 px-6 border-t border-white/10 relative z-10">
         <div className="max-w-5xl mx-auto">
 
@@ -55,7 +74,6 @@ export default function Home() {
 
           <div className="mt-10 p-8 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl">
 
-            {/* APP TITLE */}
             <h3 className="text-3xl font-semibold">
               PawOptima Steward
             </h3>
@@ -65,48 +83,21 @@ export default function Home() {
             </p >
 
             <p className="mt-6 text-white/40 text-sm leading-relaxed">
-              Calculates precise feeding needs, tracks pet health records, and builds a complete lifecycle care system with privacy-first design.
+              Calculates precise feeding needs and builds long-term health tracking for pets.
             </p >
 
-            {/* APP STORE BUTTON (CORRECT POSITION) */}
-            <div className="mt-8 flex justify-start">
-              <a
-                href="#"
-                className="
-                  px-7 py-3
-                  rounded-full
-                  bg-white text-black
-                  font-medium
-                  shadow-lg
-                  hover:scale-[1.02]
-                  transition
-                "
-              >
-                 Download on the App Store
-              </a >
-            </div>
-
-            {/* APP SCREENSHOTS (NO CROP FIXED) */}
+            {/* SCREENSHOTS */}
             <div className="mt-12 grid md:grid-cols-3 gap-8">
 
               {["/1.png", "/9.png", "/10.png"].map((img) => (
                 <div
                   key={img}
-                  className="
-                    rounded-3xl
-                    border border-white/10
-                    bg-white/5
-                    p-4
-                    backdrop-blur-xl
-                    shadow-[0_20px_60px_rgba(0,0,0,0.35)]
-                    hover:scale-[1.02]
-                    transition-transform duration-300
-                  "
+                  className="rounded-3xl border border-white/10 bg-white/5 p-4"
                 >
                   <img
                     src={img}
-                    alt="app preview"
                     className="w-full h-auto object-contain rounded-2xl"
+                    alt="app"
                   />
                 </div>
               ))}
@@ -119,36 +110,15 @@ export default function Home() {
 
       {/* PHILOSOPHY */}
       <section id="philosophy" className="py-28 px-6 border-t border-white/10 relative z-10">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-5xl mx-auto text-center">
 
           <h2 className="text-2xl md:text-3xl font-semibold">
-            Brand Philosophy
+            Philosophy
           </h2>
 
-          <div className="mt-10 grid md:grid-cols-3 gap-6">
-
-            <div className="p-6 rounded-2xl border border-white/10 bg-white/5">
-              <h3>Smart · Ease</h3>
-              <p className="text-white/50 text-sm mt-2">
-                Turn complexity into clarity.
-              </p >
-            </div>
-
-            <div className="p-6 rounded-2xl border border-white/10 bg-white/5">
-              <h3>Simple · Elegant</h3>
-              <p className="text-white/50 text-sm mt-2">
-                Minimal design with long-term value.
-              </p >
-            </div>
-
-            <div className="p-6 rounded-2xl border border-white/10 bg-white/5">
-              <h3>Safe · Empower</h3>
-              <p className="text-white/50 text-sm mt-2">
-                Privacy-first, trust-driven experience.
-              </p >
-            </div>
-
-          </div>
+          <p className="mt-6 text-white/50 text-sm">
+            Smart · Ease · Simple · Elegant · Safe · Empower
+          </p >
 
         </div>
       </section>
@@ -166,25 +136,18 @@ export default function Home() {
 
       </section>
 
-      {/* FOOTER (FULL COMPLIANT + CLICK SAFE) */}
+      {/* FOOTER */}
       <footer className="relative z-50 py-10 text-center text-white/40 text-sm border-t border-white/10">
 
         <div className="font-medium">
           SmartEaseTech Studio
         </div>
 
-        <div className="mt-2 text-white/30">
-          Smart · Simple · Safe
-        </div>
-
-        {/* LEGAL LINKS */}
         <div className="mt-6 flex justify-center gap-6 text-white/40 text-sm">
-          
           <a
             href="https://hazel-ray-a96.notion.site/Support-Privacy-389626d5f29a80e0bf7bdbee5cd89c31"
             target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-white cursor-pointer"
+            className="hover:text-white"
           >
             Privacy Policy
           </a >
@@ -192,16 +155,10 @@ export default function Home() {
           <a
             href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/"
             target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-white cursor-pointer"
+            className="hover:text-white"
           >
             Terms of Use
           </a >
-
-        </div>
-
-        <div className="mt-4 text-white/30">
-          SmartEaseTechStudio@hotmail.com
         </div>
 
       </footer>
