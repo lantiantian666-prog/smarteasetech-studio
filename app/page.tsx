@@ -12,37 +12,32 @@ export default function Home() {
       {/* NAV */}
       <header className="fixed top-0 left-0 w-full z-50 backdrop-blur-xl bg-black/30 border-b border-white/10">
         <div className="max-w-5xl mx-auto px-6 py-4 flex justify-between">
-
           <div className="font-medium tracking-tight">
-            SmartEaseTech Studio
+            SmartEaseTech
           </div>
 
           <nav className="flex gap-6 text-sm text-white/60">
             <a href=" " className="hover:text-white">App</a >
             <a href="#philosophy" className="hover:text-white">Philosophy</a >
-            <a href="#download" className="hover:text-white">Download</a >
+            <a href="#contact" className="hover:text-white">Contact</a >
           </nav>
-
         </div>
       </header>
 
       {/* HERO */}
       <section className="relative min-h-screen flex items-center justify-center px-6 pt-24">
         <div className="text-center max-w-3xl z-10">
-
           <h1 className="text-5xl md:text-6xl font-semibold tracking-tight">
-            SmartEaseTech Studio
+            Smart, Simple, Trusted Apps
           </h1>
 
           <p className="mt-6 text-white/60 text-lg">
-            Independent iOS App Studio
+            Independent iOS App Developer
           </p >
 
           <p className="mt-4 text-white/40 text-sm leading-relaxed">
-            We design focused, science-based iOS applications that simplify
-            everyday life through intelligent, human-centered design.
+            We build science-based, privacy-first iOS applications designed for clarity, precision, and long-term usability.
           </p >
-
         </div>
       </section>
 
@@ -55,7 +50,7 @@ export default function Home() {
           </h2>
 
           <p className="mt-6 text-white/50 text-sm leading-relaxed">
-            Built on clarity, intelligence, and trust — we design tools that feel simple, yet are powered by deep systems thinking.
+            Smart · Ease — Simple · Elegant — Safe · Empower
           </p >
 
           <div className="mt-10 grid md:grid-cols-3 gap-6">
@@ -63,21 +58,21 @@ export default function Home() {
             <div className="p-6 rounded-2xl border border-white/10 bg-white/5">
               <h3>Smart · Ease</h3>
               <p className="text-white/50 text-sm mt-2">
-                Turn complexity into effortless experiences.
+                Turn complexity into clarity.
               </p >
             </div>
 
             <div className="p-6 rounded-2xl border border-white/10 bg-white/5">
               <h3>Simple · Elegant</h3>
               <p className="text-white/50 text-sm mt-2">
-                Minimal design with long-term clarity.
+                Minimal design with long-term value.
               </p >
             </div>
 
             <div className="p-6 rounded-2xl border border-white/10 bg-white/5">
               <h3>Safe · Empower</h3>
               <p className="text-white/50 text-sm mt-2">
-                Trust-first systems that protect and empower users.
+                Privacy-first, trust-driven experiences.
               </p >
             </div>
 
@@ -105,12 +100,11 @@ export default function Home() {
             </p >
 
             <p className="mt-6 text-white/40 text-sm leading-relaxed">
-              A precision iOS application that calculates daily feeding needs,
-              tracks long-term health data, and builds a complete care lifecycle for pets.
+              Calculates precise feeding needs, tracks pet health data, and builds a complete care lifecycle with privacy-first design.
             </p >
 
-            {/* 🟢 APPLE-LEVEL IMAGE GRID */}
-            <div className="mt-12 grid md:grid-cols-3 gap-8 items-stretch">
+            {/* 🟢 APPLE-STYLE IMAGE GRID */}
+            <div className="mt-12 grid md:grid-cols-3 gap-8">
 
               {["/1.png", "/9.png", "/10.png"].map((img) => (
                 <div
@@ -126,57 +120,62 @@ export default function Home() {
                     transition-transform duration-300
                   "
                 >
-                  <div className="flex items-center justify-center">
-                    <img
-                      src={img}
-                      alt="app preview"
-                      className="w-full h-auto object-contain rounded-2xl"
-                    />
-                  </div>
+                  <img
+                    src={img}
+                    alt="app preview"
+                    className="w-full h-auto object-contain rounded-2xl"
+                  />
                 </div>
               ))}
 
             </div>
 
           </div>
-
         </div>
       </section>
 
-      {/* DOWNLOAD */}
-      <section id="download" className="py-28 px-6 border-t border-white/10 text-center">
+      {/* CONTACT */}
+      <section id="contact" className="py-28 px-6 border-t border-white/10 text-center">
 
         <h2 className="text-3xl font-semibold">
-          Download App
+          Contact
         </h2>
 
         <p className="mt-4 text-white/50">
-          Available on the App Store
+          SmartEaseTechStudio@hotmail.com
         </p >
-
-        <p className="mt-6 text-white/40 text-sm">
-          PawOptima Steward — Smart, science-based pet care system
-        </p >
-
-        <a
-          href="#"
-          className="inline-block mt-8 px-6 py-3 bg-white text-black rounded-full font-medium"
-        >
-          Download on App Store
-        </a >
 
       </section>
 
       {/* FOOTER */}
       <footer className="py-10 text-center text-white/40 text-sm border-t border-white/10">
 
-        <div>SmartEaseTech Studio</div>
+        <div className="font-medium">SmartEaseTech</div>
 
         <div className="mt-2 text-white/30">
-          Smart · Ease · Simple · Elegant · Safe · Empower
+          Smart · Simple · Safe
         </div>
 
-        <div className="mt-4 text-white/40">
+        {/* LEGAL LINKS */}
+        <div className="mt-6 flex justify-center gap-6 text-white/40 text-sm">
+          <a
+            href="https://hazel-ray-a96.notion.site/Support-Privacy-389626d5f29a80e0bf7bdbee5cd89c31"
+            target="_blank"
+            className="hover:text-white"
+          >
+            Privacy Policy
+          </a >
+
+          <a
+            href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/"
+            target="_blank"
+            className="hover:text-white"
+          >
+            Terms of Use
+          </a >
+        </div>
+
+        <div className="mt-4 text-white/30">
           SmartEaseTechStudio@hotmail.com
         </div>
 
