@@ -1,65 +1,167 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <main className="min-h-screen bg-black text-white relative overflow-hidden">
+
+      {/* BACKGROUND */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(0,255,180,0.10),transparent_55%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom,_rgba(120,80,255,0.08),transparent_60%)]" />
+      </div>
+
+      {/* NAV */}
+      <header className="fixed top-0 left-0 w-full z-50 backdrop-blur-xl bg-black/30 border-b border-white/10">
+        <div className="max-w-5xl mx-auto px-6 py-4 flex justify-between">
+          <div className="font-medium tracking-tight">
+            SmartEaseTech
+          </div>
+
+          <nav className="flex gap-6 text-sm text-white/60">
+            <a href=" " className="hover:text-white">App</a >
+            <a href="#philosophy" className="hover:text-white">Philosophy</a >
+            <a href="#contact" className="hover:text-white">Contact</a >
+          </nav>
+        </div>
+      </header>
+
+      {/* HERO */}
+      <section className="relative min-h-screen flex items-center justify-center px-6 pt-24">
+        <div className="text-center max-w-3xl z-10">
+
+          <h1 className="text-5xl md:text-6xl font-semibold tracking-tight">
+            Independent iOS Developer
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+
+          <p className="mt-6 text-white/60 text-lg">
+            I design and build focused iOS applications.
+          </p >
+
+          <p className="mt-4 text-white/40 text-sm">
+            Apple ecosystem · Swift · Product thinking
+          </p >
+
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* FEATURED APP */}
+      <section id="app" className="py-28 px-6 border-t border-white/10">
+        <div className="max-w-5xl mx-auto">
+
+          <h2 className="text-2xl md:text-3xl font-semibold">
+            Featured App
+          </h2>
+
+          <div className="mt-10 p-8 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl">
+
+            <h3 className="text-3xl font-semibold">
+              PawOptima Steward 🐶
+            </h3>
+
+            <p className="mt-3 text-white/60">
+              Pet Feeding & Health Lifecycle System
+            </p >
+
+            <p className="mt-6 text-white/40 text-sm leading-relaxed">
+              A science-based iOS application that calculates precise feeding amounts,
+              tracks health data, and builds long-term care history for pets.
+            </p >
+
+            <div className="mt-8 grid md:grid-cols-3 gap-4">
+
+              <div className="p-4 rounded-xl border border-white/10 bg-white/5">
+                <p className="text-white">Feeding Intelligence</p >
+                <p className="text-white/50 text-sm mt-1">
+                  Daily nutrition calculation
+                </p >
+              </div>
+
+              <div className="p-4 rounded-xl border border-white/10 bg-white/5">
+                <p className="text-white">Health Tracking</p >
+                <p className="text-white/50 text-sm mt-1">
+                  Weight, meals, behavior logs
+                </p >
+              </div>
+
+              <div className="p-4 rounded-xl border border-white/10 bg-white/5">
+                <p className="text-white">Care System</p >
+                <p className="text-white/50 text-sm mt-1">
+                  Smart reminders & lifecycle care
+                </p >
+              </div>
+
+            </div>
+
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* PHILOSOPHY (CLEAN INLINE VERSION) */}
+      <section id="philosophy" className="py-20 px-6 border-t border-white/10">
+        <div className="max-w-5xl mx-auto text-center">
+
+          <h2 className="text-2xl font-semibold mb-8">
+            Philosophy
+          </h2>
+
+          <p className="text-white/40 text-sm leading-relaxed">
+            Smart + Ease · Simple + Elegant · Safe + Empower — 
+            building intelligent, minimal, and trustworthy iOS systems.
+          </p >
+
+        </div>
+      </section>
+
+      {/* OTHER APPS */}
+      <section className="py-28 px-6 border-t border-white/10">
+        <div className="max-w-5xl mx-auto">
+
+          <h2 className="text-2xl md:text-3xl font-semibold">
+            Other Apps
+          </h2>
+
+          <div className="mt-10 grid md:grid-cols-2 gap-6">
+
+            <div className="p-6 rounded-2xl border border-white/10 bg-white/5">
+              <h3>Utility Tools</h3>
+              <p className="text-white/50 text-sm mt-2">
+                Lightweight iOS productivity apps.
+              </p >
+            </div>
+
+            <div className="p-6 rounded-2xl border border-white/10 bg-white/5">
+              <h3>Experimental Apps</h3>
+              <p className="text-white/50 text-sm mt-2">
+                Early-stage product prototypes.
+              </p >
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      {/* CONTACT */}
+      <section id="contact" className="py-28 px-6 border-t border-white/10 text-center">
+        <h2 className="text-3xl font-semibold">
+          Contact
+        </h2>
+
+        <p className="mt-4 text-white/50">
+          SmartEaseTechStudio@hotmail.com
+        </p >
+
+        <a
+          href="mailto:SmartEaseTechStudio@hotmail.com"
+          className="inline-block mt-8 px-6 py-3 bg-white text-black rounded-full"
+        >
+          Send Email
+        </a >
+      </section>
+
+      {/* FOOTER */}
+      <footer className="py-10 text-center text-white/30 text-sm border-t border-white/10">
+        © {new Date().getFullYear()} SmartEaseTech Studio
+      </footer>
+
+    </main>
   );
 }
