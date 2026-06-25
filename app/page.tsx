@@ -38,7 +38,6 @@ export default function Home() {
             SmartEaseTech Studio
           </h1>
 
-          {/* 优化点：从“独立开发者”升级为“精品工作室”，确立团队基调 */}
           <p className="mt-6 text-white/60 text-lg">
             A Boutique iOS Design & Development Studio
           </p >
@@ -54,7 +53,6 @@ export default function Home() {
       <section id="app" className="py-24 px-6 border-t border-white/10">
         <div className="max-w-5xl mx-auto">
 
-          {/* 优化点：使用 "Our" 强化机构感 */}
           <h2 className="text-2xl font-semibold">
             Our Featured App
           </h2>
@@ -80,7 +78,6 @@ export default function Home() {
 
               {["/1.png", "/9.png", "/10.png"].map((img, index) => (
                 <div key={img} className="rounded-2xl overflow-hidden border border-white/10 bg-white/5 flex items-center justify-center">
-                  {/* 优化点：使用 Next.js Image 组件优化性能，并提供更具体的 alt 描述 */}
                   <Image
                     src={img}
                     width={300}
@@ -116,7 +113,6 @@ export default function Home() {
           Our Philosophy
         </h2>
 
-        {/* 优化点：增加一段简短的愿景陈述，使用 We/Our 确立组织形象 */}
         <p className="mt-6 max-w-2xl mx-auto text-white/60 leading-relaxed">
           At SmartEaseTech, we combine scientific research with elegant engineering. Our team is dedicated to building long-term, privacy-first solutions that empower users' daily lives.
         </p >
@@ -134,7 +130,6 @@ export default function Home() {
           Get in Touch
         </h2>
 
-        {/* 优化点：邮箱转换为 mailto 链接，提升用户体验 */}
         <p className="mt-6">
           <a 
             href="mailto:SmartEaseTechStudio@hotmail.com" 
@@ -147,12 +142,9 @@ export default function Home() {
       </section>
 
       {/* FOOTER */}
-      <footer className="py-10 text-center text-white/40 text-sm border-t border-white/10">
-
-        <div>&copy; {new Date().getFullYear()} SmartEaseTech Studio. All rights reserved.</div>
-
-        <div className="mt-4 flex justify-center gap-6">
-          {/* 优化点：添加 rel="noopener noreferrer" 修复安全隐患 */}
+      <footer className="py-10 border-t border-white/10">
+        
+        <div className="flex justify-center gap-6 text-white/40 text-sm">
           <a
             href="https://hazel-ray-a96.notion.site/Support-Privacy-389626d5f29a80e0bf7bdbee5cd89c31"
             className="hover:text-white transition-colors"
