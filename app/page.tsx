@@ -1,30 +1,30 @@
+import Image from "next/image";
+
 export default function Home() {
   return (
     <main className="min-h-screen text-white relative overflow-hidden">
 
       {/* =========================
-          BACKGROUND (RESTORE ORIGINAL)
+          BACKGROUND
       ========================= */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-black" />
-
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(0,255,180,0.14),transparent_55%)]" />
-
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom,_rgba(120,80,255,0.10),transparent_60%)]" />
       </div>
 
       {/* NAV */}
       <header className="fixed top-0 left-0 w-full z-50 backdrop-blur-xl bg-black/30 border-b border-white/10">
-        <div className="max-w-5xl mx-auto px-6 py-4 flex justify-between">
+        <div className="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
 
-          <div className="font-semibold">
+          <div className="font-semibold tracking-wide">
             SmartEaseTech Studio
           </div>
 
           <nav className="flex gap-6 text-sm text-white/60">
-            <a href=" " className="hover:text-white">App</a >
-            <a href="#philosophy" className="hover:text-white">Philosophy</a >
-            <a href="#contact" className="hover:text-white">Contact</a >
+            <a href=" " className="hover:text-white transition-colors">App</a >
+            <a href="#philosophy" className="hover:text-white transition-colors">Philosophy</a >
+            <a href="#contact" className="hover:text-white transition-colors">Contact</a >
           </nav>
 
         </div>
@@ -34,15 +34,16 @@ export default function Home() {
       <section className="min-h-screen flex items-center justify-center px-6 pt-24">
         <div className="text-center max-w-3xl">
 
-          <h1 className="text-5xl md:text-6xl font-semibold">
+          <h1 className="text-5xl md:text-6xl font-semibold tracking-tight">
             SmartEaseTech Studio
           </h1>
 
-          <p className="mt-6 text-white/60">
-            Independent iOS App Developer
+          {/* 优化点：从“独立开发者”升级为“精品工作室”，确立团队基调 */}
+          <p className="mt-6 text-white/60 text-lg">
+            A Boutique iOS Design & Development Studio
           </p >
 
-          <p className="mt-4 text-white/40 text-sm">
+          <p className="mt-4 text-white/40 text-sm tracking-wide">
             Privacy-first · Science-based · Long-term design
           </p >
 
@@ -53,8 +54,9 @@ export default function Home() {
       <section id="app" className="py-24 px-6 border-t border-white/10">
         <div className="max-w-5xl mx-auto">
 
+          {/* 优化点：使用 "Our" 强化机构感 */}
           <h2 className="text-2xl font-semibold">
-            Featured App
+            Our Featured App
           </h2>
 
           <div className="mt-10 p-8 rounded-3xl border border-white/10 bg-white/5">
@@ -67,7 +69,7 @@ export default function Home() {
               Science-based Pet Feeding & Health System
             </p >
 
-            <p className="mt-6 text-white/40 text-sm">
+            <p className="mt-6 text-white/40 text-sm max-w-2xl">
               Calculates precise feeding needs and builds long-term pet health tracking.
             </p >
 
@@ -76,12 +78,15 @@ export default function Home() {
             ========================= */}
             <div className="mt-10 grid md:grid-cols-3 gap-6">
 
-              {["/1.png", "/9.png", "/10.png"].map((img) => (
-                <div key={img} className="rounded-2xl overflow-hidden border border-white/10 bg-white/5">
-                  <img
+              {["/1.png", "/9.png", "/10.png"].map((img, index) => (
+                <div key={img} className="rounded-2xl overflow-hidden border border-white/10 bg-white/5 flex items-center justify-center">
+                  {/* 优化点：使用 Next.js Image 组件优化性能，并提供更具体的 alt 描述 */}
+                  <Image
                     src={img}
+                    width={300}
+                    height={600}
                     className="w-full h-auto object-contain block"
-                    alt="app"
+                    alt={`PawOptima Steward Interface Screenshot ${index + 1}`}
                   />
                 </div>
               ))}
@@ -89,12 +94,12 @@ export default function Home() {
             </div>
 
             {/* =========================
-                APP STORE BUTTON (FIXED POSITION)
+                APP STORE BUTTON
             ========================= */}
             <div className="mt-10 flex justify-center">
               <a
                 href="#"
-                className="px-7 py-3 rounded-full bg-white text-black font-medium hover:scale-[1.02] transition"
+                className="px-7 py-3 rounded-full bg-white text-black font-medium hover:scale-[1.02] transition-transform"
               >
                  Download on the App Store
               </a >
@@ -108,10 +113,15 @@ export default function Home() {
       <section id="philosophy" className="py-24 px-6 border-t border-white/10 text-center">
 
         <h2 className="text-2xl font-semibold">
-          Philosophy
+          Our Philosophy
         </h2>
 
-        <p className="mt-6 text-white/50 text-sm">
+        {/* 优化点：增加一段简短的愿景陈述，使用 We/Our 确立组织形象 */}
+        <p className="mt-6 max-w-2xl mx-auto text-white/60 leading-relaxed">
+          At SmartEaseTech, we combine scientific research with elegant engineering. Our team is dedicated to building long-term, privacy-first solutions that empower users' daily lives.
+        </p >
+
+        <p className="mt-8 text-white/40 text-sm font-medium tracking-widest uppercase">
           Smart · Ease · Simple · Elegant · Safe · Empower
         </p >
 
@@ -121,11 +131,17 @@ export default function Home() {
       <section id="contact" className="py-24 px-6 border-t border-white/10 text-center">
 
         <h2 className="text-3xl font-semibold">
-          Contact
+          Get in Touch
         </h2>
 
-        <p className="mt-4 text-white/50">
-          SmartEaseTechStudio@hotmail.com
+        {/* 优化点：邮箱转换为 mailto 链接，提升用户体验 */}
+        <p className="mt-6">
+          <a 
+            href="mailto:SmartEaseTechStudio@hotmail.com" 
+            className="text-white/60 hover:text-white transition-colors text-lg"
+          >
+            SmartEaseTechStudio@hotmail.com
+          </a >
         </p >
 
       </section>
@@ -133,23 +149,26 @@ export default function Home() {
       {/* FOOTER */}
       <footer className="py-10 text-center text-white/40 text-sm border-t border-white/10">
 
-        <div>SmartEaseTech Studio</div>
+        <div>&copy; {new Date().getFullYear()} SmartEaseTech Studio. All rights reserved.</div>
 
         <div className="mt-4 flex justify-center gap-6">
+          {/* 优化点：添加 rel="noopener noreferrer" 修复安全隐患 */}
           <a
             href="https://hazel-ray-a96.notion.site/Support-Privacy-389626d5f29a80e0bf7bdbee5cd89c31"
-            className="hover:text-white"
+            className="hover:text-white transition-colors"
             target="_blank"
+            rel="noopener noreferrer"
           >
             Privacy Policy
           </a >
 
           <a
             href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/"
-            className="hover:text-white"
+            className="hover:text-white transition-colors"
             target="_blank"
+            rel="noopener noreferrer"
           >
-            Terms
+            Terms of Use
           </a >
         </div>
 
