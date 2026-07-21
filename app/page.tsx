@@ -1,11 +1,7 @@
-jsx
 import Image from "next/image";
 import Link from "next/link";
 
-
-// ==========================================
-// 主页文章列表（仅保留元数据用于展示卡片）
-// ==========================================
+// 主页文章列表元数据
 const ARTICLES = [
   {
     id: "calories",
@@ -33,7 +29,6 @@ const ARTICLES = [
   }
 ];
 
-
 export default function Home() {
   return (
     <main className="min-h-screen text-white relative overflow-hidden">
@@ -44,32 +39,27 @@ export default function Home() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom,_rgba(120,80,255,0.10),transparent_60%)]" />
       </div>
 
-
       {/* NAV */}
       <header className="fixed top-0 left-0 w-full z-50 backdrop-blur-xl bg-black/30 border-b border-white/10">
         <div className="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
-          <div className="font-semibold tracking-wide">
-            SmartEaseTech Studio
-          </div>
+          <div className="font-semibold tracking-wide">SmartEaseTech Studio</div>
           <nav className="flex gap-6 text-sm text-white/60">
-            <a href="#app" className="hover:text-white transition-colors">App</a>
-            <a href="#philosophy" className="hover:text-white transition-colors">Philosophy</a>
-            <a href="#insights" className="hover:text-white transition-colors">Insights</a>
-            <a href="#contact" className="hover:text-white transition-colors">Contact</a>
+            <a href=" " className="hover:text-white transition-colors">App</a >
+            <a href="#philosophy" className="hover:text-white transition-colors">Philosophy</a >
+            <a href="#insights" className="hover:text-white transition-colors">Insights</a >
+            <a href="#contact" className="hover:text-white transition-colors">Contact</a >
           </nav>
         </div>
       </header>
-
 
       {/* HERO */}
       <section className="min-h-screen flex items-center justify-center px-6 pt-24">
         <div className="text-center max-w-3xl">
           <h1 className="text-5xl md:text-6xl font-semibold tracking-tight">SmartEaseTech Studio</h1>
-          <p className="mt-6 text-white/60 text-lg">A Boutique iOS Design & Development Studio</p>
-          <p className="mt-4 text-white/40 text-sm tracking-wide">Privacy-first · Science-based · Long-term design</p>
+          <p className="mt-6 text-white/60 text-lg">A Boutique iOS Design & Development Studio</p >
+          <p className="mt-4 text-white/40 text-sm tracking-wide">Privacy-first · Science-based · Long-term design</p >
         </div>
       </section>
-
 
       {/* APP SECTION */}
       <section id="app" className="py-24 px-6 border-t border-white/10">
@@ -77,8 +67,8 @@ export default function Home() {
           <h2 className="text-2xl font-semibold">Our Featured App</h2>
           <div className="mt-10 p-8 rounded-3xl border border-white/10 bg-white/5">
             <h3 className="text-3xl font-semibold">PawOptima Steward</h3>
-            <p className="mt-3 text-white/60">Science-based Pet Feeding & Health System</p>
-            <p className="mt-6 text-white/40 text-sm max-w-2xl">Calculates precise feeding needs and builds long-term pet health tracking.</p>
+            <p className="mt-3 text-white/60">Science-based Pet Feeding & Health System</p >
+            <p className="mt-6 text-white/40 text-sm max-w-2xl">Calculates precise feeding needs and builds long-term pet health tracking.</p >
             <div className="mt-10 grid md:grid-cols-3 gap-6">
               {["/1.png", "/9.png", "/10.png"].map((img, index) => (
                 <div key={img} className="rounded-2xl overflow-hidden border border-white/10 bg-white/5 flex items-center justify-center">
@@ -88,32 +78,29 @@ export default function Home() {
             </div>
             <div className="mt-10 flex justify-center">
               <a href="#" className="px-7 py-3 rounded-full bg-white text-black font-medium hover:scale-[1.02] transition-transform">
-                 Download on the App Store
-              </a>
+                 Download on the App Store
+              </a >
             </div>
           </div>
         </div>
       </section>
-
 
       {/* PHILOSOPHY */}
       <section id="philosophy" className="py-24 px-6 border-t border-white/10 text-center">
         <h2 className="text-2xl font-semibold">Our Philosophy</h2>
         <p className="mt-6 max-w-2xl mx-auto text-white/60 leading-relaxed">
           At SmartEaseTech, we combine scientific research with elegant engineering. Our team is dedicated to building long-term, privacy-first solutions that empower users&apos; daily lives.
-        </p>
-        <p className="mt-8 text-white/40 text-sm font-medium tracking-widest uppercase">Smart · Ease · Simple · Elegant · Safe · Empower</p>
+        </p >
+        <p className="mt-8 text-white/40 text-sm font-medium tracking-widest uppercase">Smart · Ease · Simple · Elegant · Safe · Empower</p >
       </section>
 
-
-      {/* INSIGHTS / LIBRARY SECTION */}
+      {/* INSIGHTS SECTION - 已经彻底修改为 Link 路由结构 */}
       <section id="insights" className="py-24 px-6 border-t border-white/10">
         <div className="max-w-5xl mx-auto">
           <div className="text-center md:text-left mb-12">
             <h2 className="text-2xl font-semibold">Insights & Guides</h2>
-            <p className="mt-2 text-white/50 text-sm">Explore our scientific resources on pet nutrition, body evaluation, and systemic record-keeping.</p>
+            <p className="mt-2 text-white/50 text-sm">Explore our scientific resources on pet nutrition, body evaluation, and systemic record-keeping.</p >
           </div>
-
 
           <div className="grid md:grid-cols-3 gap-6">
             {ARTICLES.map((article) => (
@@ -130,10 +117,10 @@ export default function Home() {
                   <h3 className="text-lg font-semibold group-hover:text-emerald-400 transition-colors">
                     {article.title}
                   </h3>
-                  <p className="text-xs text-white/50 mt-1 mb-4">{article.subtitle}</p>
+                  <p className="text-xs text-white/50 mt-1 mb-4">{article.subtitle}</p >
                   <p className="text-sm text-white/40 line-clamp-3 leading-relaxed">
                     {article.excerpt}
-                  </p>
+                  </p >
                 </div>
                 <div className="mt-6 text-xs text-white/60 group-hover:text-white font-medium flex items-center gap-1 transition-colors self-start">
                   Read Full Article &rarr;
@@ -144,25 +131,22 @@ export default function Home() {
         </div>
       </section>
 
-
       {/* CONTACT */}
       <section id="contact" className="py-24 px-6 border-t border-white/10 text-center">
         <h2 className="text-3xl font-semibold">Get in Touch</h2>
         <p className="mt-6">
-          <a href="mailto:SmartEaseTechStudio@hotmail.com" className="text-white/60 hover:text-white transition-colors text-lg">SmartEaseTechStudio@hotmail.com</a>
-        </p>
+          <a href="mailto:SmartEaseTechStudio@hotmail.com" className="text-white/60 hover:text-white transition-colors text-lg">SmartEaseTechStudio@hotmail.com</a >
+        </p >
       </section>
-
 
       {/* FOOTER */}
       <footer className="py-10 border-t border-white/10 text-center">
         <div className="mb-4 text-white/40 text-sm">&copy; {new Date().getFullYear()} Minghua Li. All rights reserved.</div>
         <div className="flex justify-center gap-6 text-white/40 text-sm">
-          <a href="https://hazel-ray-a96.notion.site/Support-Privacy-389626d5f29a80e0bf7bdbee5cd89c31" className="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
-          <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" className="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">Terms of Use</a>
+          <a href="https://hazel-ray-a96.notion.site/Support-Privacy-389626d5f29a80e0bf7bdbee5cd89c31" className="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">Privacy Policy</a >
+          <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" className="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">Terms of Use</a >
         </div>
       </footer>
     </main>
   );
 }
-
