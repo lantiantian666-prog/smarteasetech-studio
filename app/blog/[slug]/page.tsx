@@ -1,6 +1,9 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
+// ==========================================
+// 独立博客页面数据与内容
+// ==========================================
 const ARTICLES_CONTENT = [
   {
     id: "calories",
@@ -52,22 +55,42 @@ const ARTICLES_CONTENT = [
   }
 ];
 
+// ==========================================
+// 强制生成静态路由参数
+// ==========================================
 export async function generateStaticParams() {
-  return [{ slug: "calories" }, { slug: "bcs" }, { slug: "checklist" }];
+  return [
+    { slug: "calories" },
+    { slug: "bcs" },
+    { slug: "checklist" },
+  ];
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
-  const article = ARTICLES_CONTENT.find((a) => a.id === params.slug);
+// ==========================================
+// 核心修复：使用 async 解析 Next.js 15 的 params Promise
+// ==========================================
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const resolvedParams = await params;
+  const article = ARTICLES_CONTENT.find((a) => a.id === resolvedParams.slug);
+  
   if (!article) return { title: "Article Not Found" };
+  
   return {
     title: `${article.title} | SmartEaseTech Studio`,
     description: article.subtitle,
   };
 }
 
-export default function BlogPost({ params }: { params: { slug: string } }) {
-  const article = ARTICLES_CONTENT.find((a) => a.id === params.slug);
-  if (!article) notFound();
+// ==========================================
+// 博客页面主组件：同样使用 async 解析 params
+// ==========================================
+export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
+  const resolvedParams = await params;
+  const article = ARTICLES_CONTENT.find((a) => a.id === resolvedParams.slug);
+
+  if (!article) {
+    notFound();
+  }
 
   return (
     <main className="min-h-screen text-white relative overflow-hidden bg-zinc-950">
@@ -78,6 +101,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
           </Link>
         </div>
       </header>
+
       <article className="max-w-3xl mx-auto px-6 pt-32 pb-24">
         <div className="border-b border-white/10 pb-8 mb-10">
           <div className="flex gap-4 text-xs text-white/40 mb-4">
@@ -85,11 +109,19 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
             <span>•</span>
             <span>{article.readTime}</span>
           </div>
-          <h1 className="text-3xl md:text-4xl font-semibold tracking-tight leading-tight text-white mb-4">{article.title}</h1>
-          <p className="text-lg text-emerald-400 font-medium">{article.subtitle}</p >
+          <h1 className="text-3xl md:text-4xl font-semibold tracking-tight leading-tight text-white mb-4">
+            {article.title}
+          </h1>
+          <p className="text-lg text-emerald-400 font-medium">
+            {article.subtitle}
+          </p >
         </div>
-        <div className="prose prose-invert max-w-none">{article.content}</div>
+
+        <div className="prose prose-invert max-w-none">
+          {article.content}
+        </div>
       </article>
+
       <footer className="py-10 border-t border-white/10 text-center">
         <div className="mb-4 text-white/40 text-sm">&copy; {new Date().getFullYear()} Minghua Li. All rights reserved.</div>
       </footer>
