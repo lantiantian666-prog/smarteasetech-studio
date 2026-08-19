@@ -1,17 +1,18 @@
 import Image from "next/image";
 import Link from "next/link";
 
-// 通用 App Store 按钮组件（目前为纯展示状态的“死按钮”，无链接跳转）
+// 通用 App Store 按钮组件（标准官方文案，目前为无链接的纯展示状态）
 const AppStoreButton = ({ text }: { text: string }) => (
   <div
-    className="inline-flex items-center gap-3 bg-black/50 text-white border border-white/20 px-8 py-3.5 rounded-full font-medium shadow-lg backdrop-blur-sm cursor-default"
+    className="inline-flex items-center gap-3 bg-black/50 text-white border border-white/20 px-8 py-3.5 rounded-full font-medium shadow-lg backdrop-blur-sm transition-all duration-300"
   >
     {/* Apple 徽标 */}
     <svg viewBox="0 0 384 512" width="16" height="16" fill="currentColor" className="text-white">
       <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 51 17.9 76.2 17.9 48.6-.1 90.4-82.5 102.6-119.3-39-19.9-50-46.7-50-81.2zM211 118.8c34.5-38.3 22-81.3 12-96.1-33 1.1-66.5 32.1-66.5 66.2 0 31.8 23.6 57 44.5 57 5.4 0 10.1-.6 10-27.1z"/>
     </svg>
-    <div className="flex flex-col text-left opacity-80">
-      <span className="text-[10px] text-white/60 font-normal">Coming Soon to the</span>
+    <div className="flex flex-col text-left">
+      {/* 恢复为苹果官方的标准 Download on the 文案 */}
+      <span className="text-[10px] text-white/60 font-normal">Download on the</span>
       <span className="text-sm font-semibold">{text}</span>
     </div>
   </div>
@@ -106,7 +107,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 极简底部 Footer（已配置新的 Notion 链接） */}
+      {/* 极简底部 Footer（配置了全新的 Notion 隐私链接和 Apple EULA） */}
       <footer className="py-12 flex justify-center items-center gap-8 text-sm text-white/40 border-t border-white/10">
         <a href="https://hazel-ray-a96.notion.site/Support-Privacy-SmartEaseTech-Studio-3c1626d5f29a80bb9e53eb137608daec" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-300">
           Privacy Policy
