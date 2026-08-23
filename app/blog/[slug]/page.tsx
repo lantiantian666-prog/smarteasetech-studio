@@ -17,18 +17,11 @@ const ARTICLES_CONTENT = [
         <p className="text-lg text-emerald-400 font-medium italic border-l-4 border-emerald-500 pl-4 py-1">
           &quot;How much should I feed my dog or cat?&quot;
         </p>
-        <p>The answer is rarely as simple as reading the feeding chart on a bag of food. Two pets of the same weight may need very different amounts of food depending on their age, activity level, body condition, whether they are neutered, and many other factors. Feeding too much can gradually lead to obesity, while feeding too little may prevent healthy growth or cause nutritional deficiencies.</p>
+        <p>The answer is rarely as simple as reading the feeding chart on a bag of food. Two pets of the same weight may need very different amounts of food depending on their age, activity level, body condition, whether they are neutered, and many other factors.</p>
         <p>This guide explains how daily calorie needs are determined, what affects your pet&apos;s energy requirements, and how to calculate a more personalized feeding plan.</p>
 
         <h3 className="text-xl font-semibold text-white mt-10 mb-4">Why Feeding Charts Are Only a Starting Point</h3>
         <p>Most commercial pet foods include feeding recommendations on the package. These charts are designed for a wide range of animals and should be considered general estimates rather than exact recommendations.</p>
-        <ul className="list-disc pl-5 space-y-1 text-white/70">
-          <li>Is highly active or mostly indoors</li>
-          <li>Has recently been neutered or spayed</li>
-          <li>Needs to lose or gain weight</li>
-          <li>Is a growing puppy or kitten</li>
-          <li>Is pregnant or nursing</li>
-        </ul>
 
         <h3 className="text-xl font-semibold text-white mt-10 mb-4">What Determines Daily Calorie Needs?</h3>
         <h4 className="text-lg font-medium text-emerald-400 mt-6 mb-2">Body Weight & Life Stage</h4>
@@ -40,13 +33,11 @@ const ARTICLES_CONTENT = [
         <div className="border-t border-white/10 mt-10 pt-8">
           <h3 className="text-xl font-semibold text-white mb-4">Final Thoughts</h3>
           <p>There is no universal answer to the question, &quot;How much should I feed my dog or cat?&quot; Healthy feeding depends on multiple factors working together. Using a science-based approach—and monitoring your pet&apos;s progress over time—can help support lifelong health.</p>
-          <p className="text-sm text-white/50 mt-6">Feeding recommendations are intended as general guidance and should not replace professional veterinary advice.</p>
         </div>
       </div>
     )
   },
   {
-    // 这里修复了中间文章的 ID，与主页链接完全对应
     id: "raw-food-guide",
     title: "Raw Food Guide: Essential Tips for Beginners",
     subtitle: "Essential tips and nutritional balance for raw feeding.",
@@ -67,7 +58,7 @@ const ARTICLES_CONTENT = [
         </ul>
 
         <h3 className="text-xl font-semibold text-white mt-10 mb-4">Hygiene and Safe Handling</h3>
-        <p>Handling raw meat for pets requires the exact same hygiene standards as preparing raw meat for yourself. Always wash your hands, clean preparation surfaces thoroughly with hot soapy water, and ensure the meat is stored at safe temperatures to prevent bacterial growth like Salmonella or E. coli.</p>
+        <p>Handling raw meat for pets requires the exact same hygiene standards as preparing raw meat for yourself. Always wash your hands, clean preparation surfaces thoroughly with hot soapy water, and ensure the meat is stored at safe temperatures.</p>
 
         <div className="border-t border-white/10 mt-10 pt-8">
           <h3 className="text-xl font-semibold text-white mb-4">Final Thoughts</h3>
@@ -100,10 +91,6 @@ const ARTICLES_CONTENT = [
             <h4 className="text-lg font-medium text-emerald-400 mb-2">3. Vaccinations & Parasite Prevention</h4>
             <p>Keeping an accurate history helps you remember vaccine types, booster schedules, and preventive schedules to avoid missed or duplicated treatments.</p>
           </div>
-          <div>
-            <h4 className="text-lg font-medium text-emerald-400 mb-2">4. Veterinary Visits & Medications</h4>
-            <p>Recording appointments allows you to review physical examinations, tests, and follow-ups. If your pet receives medication, maintaining a complete dosage history is vital.</p>
-          </div>
         </div>
 
         <h3 className="text-xl font-semibold text-white mt-10 mb-4">Why Digital Records Make Life Easier</h3>
@@ -118,22 +105,12 @@ const ARTICLES_CONTENT = [
   }
 ];
 
-// ==========================================
-// 动态生成网页 SEO 标题（让谷歌精准抓取）
-// ==========================================
 export async function generateMetadata({ params }: { params: { slug: string } }) {
   const article = ARTICLES_CONTENT.find((a) => a.id === params.slug);
   if (!article) return { title: "Article Not Found" };
-  
-  return {
-    title: `${article.title} | SmartEaseTech Studio`,
-    description: article.subtitle,
-  };
+  return { title: `${article.title} | SmartEaseTech Studio`, description: article.subtitle };
 }
 
-// ==========================================
-// 博客页面主组件
-// ==========================================
 export default function BlogPost({ params }: { params: { slug: string } }) {
   const article = ARTICLES_CONTENT.find((a) => a.id === params.slug);
 
@@ -143,7 +120,6 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
 
   return (
     <main className="min-h-screen text-white relative overflow-hidden bg-zinc-950">
-      {/* 博客专属顶部导航 */}
       <header className="fixed top-0 left-0 w-full z-50 backdrop-blur-xl bg-black/50 border-b border-white/10">
         <div className="max-w-3xl mx-auto px-6 py-4 flex items-center">
           <Link href="/" className="text-sm text-white/60 hover:text-white transition-colors flex items-center gap-2">
@@ -152,9 +128,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
         </div>
       </header>
 
-      {/* 文章正文容器 */}
       <article className="max-w-3xl mx-auto px-6 pt-32 pb-24">
-        {/* 文章头部 */}
         <div className="border-b border-white/10 pb-8 mb-10">
           <div className="flex gap-4 text-xs text-white/40 mb-4">
             <span>{article.date}</span>
@@ -168,14 +142,11 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
             {article.subtitle}
           </p>
         </div>
-
-        {/* 文章内容 */}
         <div className="prose prose-invert max-w-none">
           {article.content}
         </div>
       </article>
 
-      {/* 底部版权 */}
       <footer className="py-10 border-t border-white/10 text-center">
         <div className="mb-4 text-white/40 text-sm">&copy; {new Date().getFullYear()} SmartEaseTech Studio. All rights reserved.</div>
       </footer>
