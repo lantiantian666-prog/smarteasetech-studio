@@ -105,23 +105,25 @@ const ARTICLES_CONTENT = [
   }
 ];
 
-// ==========================================
-// 核心修复：强制 Vercel 静态渲染这3个页面，杜绝 404
-// ==========================================
+// 静态渲染：提前把文章打包装好
 export function generateStaticParams() {
   return ARTICLES_CONTENT.map((article) => ({
     slug: article.id,
   }));
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
-  const article = ARTICLES_CONTENT.find((a) => a.id === params.slug);
+// 核心修复：加入 async / await 强制异步解析参数，完美兼容所有 Next.js 版本
+export async function generateMetadata({ params }: any) {
+  const resolvedParams = await params;
+  const article = ARTICLES_CONTENT.find((a) => a.id === resolvedParams.slug);
   if (!article) return { title: "Article Not Found" };
   return { title: `${article.title} | SmartEaseTech Studio`, description: article.subtitle };
 }
 
-export default function BlogPost({ params }: { params: { slug: string } }) {
-  const article = ARTICLES_CONTENT.find((a) => a.id === params.slug);
+// 核心修复：组件改为 async，并等待 params 解析完成
+export default async function BlogPost({ params }: any) {
+  const resolvedParams = await params;
+  const article = ARTICLES_CONTENT.find((a) => a.id === resolvedParams.slug);
 
   if (!article) {
     notFound();
