@@ -105,6 +105,15 @@ const ARTICLES_CONTENT = [
   }
 ];
 
+// ==========================================
+// 核心修复：强制 Vercel 静态渲染这3个页面，杜绝 404
+// ==========================================
+export function generateStaticParams() {
+  return ARTICLES_CONTENT.map((article) => ({
+    slug: article.id,
+  }));
+}
+
 export async function generateMetadata({ params }: { params: { slug: string } }) {
   const article = ARTICLES_CONTENT.find((a) => a.id === params.slug);
   if (!article) return { title: "Article Not Found" };
