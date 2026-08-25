@@ -17,42 +17,61 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark">
-      <body className={`${inter.className} bg-zinc-950 text-white min-h-screen flex flex-col antialiased`}>
+      <body className={`${inter.className} bg-[#0B0F19] text-slate-100 min-h-screen flex flex-col antialiased selection:bg-emerald-500 selection:text-white`}>
         
-        {/* 加强版全局固定导航栏 (Fixed Navbar) */}
-        <header className="fixed top-0 left-0 right-0 z-50 bg-zinc-950/80 backdrop-blur-md border-b border-white/10">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <Link href="/" className="text-xl font-extrabold tracking-tight text-white hover:text-emerald-400 transition-colors">
-              SmartEaseTech
+        {/* 背景微光氛围层：打造立体空间感，绝对告别单调大黑屏 */}
+        <div className="fixed inset-0 -z-50 pointer-events-none overflow-hidden">
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl" />
+          <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl" />
+        </div>
+
+        {/* 高级感悬浮毛玻璃导航栏 (Floating Glass Navbar) */}
+        <header className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-5xl">
+          <div className="backdrop-blur-2xl bg-slate-900/80 border border-slate-700/50 shadow-2xl rounded-2xl px-6 py-3.5 flex items-center justify-between transition-all duration-300">
+            
+            {/* 工作室 Logo：带有微光渐变 */}
+            <Link href="/" className="text-lg font-bold tracking-tight text-white flex items-center gap-2 group">
+              <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 shadow-[0_0_12px_rgba(52,211,153,0.6)] group-hover:scale-125 transition-transform" />
+              <span className="bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent">
+                SmartEaseTech
+              </span>
             </Link>
+
+            {/* 导航菜单 */}
             <nav className="flex items-center space-x-6 sm:space-x-8">
-              <Link href="/" className="text-sm font-medium text-white/70 hover:text-white transition-colors">
+              <Link href="/" className="text-sm font-medium text-slate-300 hover:text-white hover:scale-105 transition-all">
                 Home
               </Link>
-              <Link href="/blog" className="text-sm font-medium text-white/70 hover:text-white transition-colors">
+              <Link href="/blog" className="text-sm font-medium text-slate-300 hover:text-white hover:scale-105 transition-all">
                 Blog & Resources
               </Link>
-              <a href="mailto:SmartEaseTechStudio@hotmail.com" className="text-sm font-medium text-white/70 hover:text-white transition-colors hidden sm:block">
+              <a href="mailto:SmartEaseTechStudio@hotmail.com" className="text-sm font-medium text-slate-300 hover:text-white hover:scale-105 transition-all hidden sm:block">
                 Support
               </a>
             </nav>
+
           </div>
         </header>
 
-        {/* 页面主体内容：加入 pt-16 确保内容不会被 fixed 导航栏遮挡 */}
-        <main className="flex-grow pt-16">
+        {/* 页面主体内容：顶部留出空间，完美适配悬浮岛导航 */}
+        <main className="flex-grow pt-28">
           {children}
         </main>
         
-        {/* 全局底部合规链接 (Footer) */}
-        <footer className="py-8 border-t border-white/10 bg-zinc-950 text-center text-sm text-white/40">
-          <div className="flex justify-center items-center gap-6">
-            <a href="https://hazel-ray-a96.notion.site/Support-Privacy-SmartEaseTech-Studio-3c1626d5f29a80bb9e53eb137608daec" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
-              Privacy Policy
-            </a>
-            <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
-              Terms of Service
-            </a>
+        {/* 高级感底部区域 (Footer) */}
+        <footer className="py-12 border-t border-slate-800/80 bg-slate-950/60 backdrop-blur-md text-center text-sm text-slate-500">
+          <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p className="text-xs text-slate-600">
+              Crafted with precision. Local-first & Privacy-focused.
+            </p>
+            <div className="flex items-center gap-6">
+              <a href="https://hazel-ray-a96.notion.site/Support-Privacy-SmartEaseTech-Studio-3c1626d5f29a80bb9e53eb137608daec" target="_blank" rel="noopener noreferrer" className="hover:text-slate-300 transition-colors text-xs">
+                Privacy Policy
+              </a>
+              <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener noreferrer" className="hover:text-slate-300 transition-colors text-xs">
+                Terms of Service
+              </a>
+            </div>
           </div>
         </footer>
 
