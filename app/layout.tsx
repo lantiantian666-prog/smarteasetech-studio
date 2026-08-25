@@ -46,9 +46,9 @@ export default function RootLayout({
               <Link href="/blog" className="text-sm font-medium text-slate-300 hover:text-amber-300 transition-colors">
                 Blog & Resources
               </Link>
-              <a href="mailto:SmartEaseTechStudio@hotmail.com" className="text-sm font-medium text-slate-300 hover:text-amber-300 transition-colors hidden sm:block">
+              <Link href="/support" className="text-sm font-medium text-slate-300 hover:text-amber-300 transition-colors hidden sm:block">
                 Support
-              </a>
+              </Link>
             </nav>
 
           </div>
