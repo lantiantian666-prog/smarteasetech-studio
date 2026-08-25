@@ -809,10 +809,5 @@ export default async function BlogPost({ params }: any) {
           </a>
         </div>
       </article>
-
-      <footer className="py-10 border-t border-white/10 text-center">
-        <div className="mb-4 text-white/40 text-sm">&copy; {new Date().getFullYear()} SmartEaseTech Studio. All rights reserved.</div>
-      </footer>
-    </main>
   );
 }
