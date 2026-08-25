@@ -15,7 +15,7 @@ export default function SupportPage() {
         </p>
       </section>
 
-      {/* 联系与反馈卡片 */}
+      {/* 联系与反馈卡片（纯文本展示，无弹窗干扰） */}
       <section className="p-8 sm:p-10 rounded-3xl bg-[#05221b]/60 border border-emerald-900/40 backdrop-blur-sm space-y-6 shadow-2xl">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 text-xs font-medium">
           Contact & Feedback
@@ -24,14 +24,8 @@ export default function SupportPage() {
         <p className="text-slate-300 font-light leading-relaxed">
           If you encounter any issues, bugs, or have feature suggestions regarding our apps, please feel free to drop us an email. We typically respond within 24–48 hours.
         </p>
-        <div>
-          <a 
-            href="mailto:SmartEaseTechStudio@hotmail.com" 
-            className="inline-flex items-center gap-3 bg-emerald-600 hover:bg-emerald-500 text-white px-8 py-3.5 rounded-full font-medium shadow-lg transition-all duration-300"
-          >
-            <span>SmartEaseTechStudio@hotmail.com</span>
-            <span>&rarr;</span>
-          </a>
+        <div className="inline-block p-4 rounded-2xl bg-slate-900/80 border border-emerald-500/30 text-emerald-300 font-mono text-lg select-all shadow-inner">
+          SmartEaseTechStudio@hotmail.com
         </div>
       </section>
 
