@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import Image from 'next/image';
 
 export default function Home() {
@@ -86,7 +85,7 @@ export default function Home() {
           </p>
           <div className="pt-2">
             <a 
-              href="https://apps.apple.com/app/6788009023" 
+              href="https://apps.apple.com/app/id6788009023" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="inline-flex items-center gap-3 bg-amber-600 hover:bg-amber-500 text-white px-8 py-3.5 rounded-full font-medium shadow-lg transition-all duration-300 group"
