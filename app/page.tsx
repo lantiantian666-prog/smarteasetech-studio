@@ -1,6 +1,12 @@
+'use client';
+
 import Image from 'next/image';
+import { useState } from 'react';
 
 export default function Home() {
+  // 🚀 新增：用于追踪当前被点击放大的图片路径
+  const [enlargedImg, setEnlargedImg] = useState<string | null>(null);
+
   return (
     <div className="max-w-6xl mx-auto px-6 py-12 space-y-24">
       
@@ -48,15 +54,24 @@ export default function Home() {
           </div>
         </div>
         
-        {/* PawOptima 3张真实截图展示 */}
+        {/* PawOptima 3张真实截图展示 (增加点击放大交互) */}
         <div className="grid grid-cols-3 gap-3">
-          <div className="rounded-2xl overflow-hidden border border-emerald-500/20 bg-slate-950 shadow-xl transform hover:-translate-y-1 transition-transform">
+          <div 
+            onClick={() => setEnlargedImg('/pawoptima-1.png')}
+            className="cursor-zoom-in rounded-2xl overflow-hidden border border-emerald-500/20 bg-slate-950 shadow-xl transform hover:-translate-y-1 transition-transform"
+          >
             <Image src="/pawoptima-1.png" alt="PawOptima Screenshot 1" width={300} height={600} className="w-full h-auto object-cover" />
           </div>
-          <div className="rounded-2xl overflow-hidden border border-emerald-500/20 bg-slate-950 shadow-xl transform translate-y-4 hover:translate-y-3 transition-transform">
+          <div 
+            onClick={() => setEnlargedImg('/pawoptima-2.png')}
+            className="cursor-zoom-in rounded-2xl overflow-hidden border border-emerald-500/20 bg-slate-950 shadow-xl transform translate-y-4 hover:translate-y-3 transition-transform"
+          >
             <Image src="/pawoptima-2.png" alt="PawOptima Screenshot 2" width={300} height={600} className="w-full h-auto object-cover" />
           </div>
-          <div className="rounded-2xl overflow-hidden border border-emerald-500/20 bg-slate-950 shadow-xl transform hover:-translate-y-1 transition-transform">
+          <div 
+            onClick={() => setEnlargedImg('/pawoptima-3.png')}
+            className="cursor-zoom-in rounded-2xl overflow-hidden border border-emerald-500/20 bg-slate-950 shadow-xl transform hover:-translate-y-1 transition-transform"
+          >
             <Image src="/pawoptima-3.png" alt="PawOptima Screenshot 3" width={300} height={600} className="w-full h-auto object-cover" />
           </div>
         </div>
@@ -96,15 +111,24 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Pray Verses 3张真实截图展示 */}
+        {/* Pray Verses 3张真实截图展示 (增加点击放大交互) */}
         <div className="grid grid-cols-3 gap-3">
-          <div className="rounded-2xl overflow-hidden border border-amber-500/20 bg-slate-950 shadow-xl transform hover:-translate-y-1 transition-transform">
+          <div 
+            onClick={() => setEnlargedImg('/prayverses-1.png')}
+            className="cursor-zoom-in rounded-2xl overflow-hidden border border-amber-500/20 bg-slate-950 shadow-xl transform hover:-translate-y-1 transition-transform"
+          >
             <Image src="/prayverses-1.png" alt="Pray Verses Screenshot 1" width={300} height={600} className="w-full h-auto object-cover" />
           </div>
-          <div className="rounded-2xl overflow-hidden border border-amber-500/20 bg-slate-950 shadow-xl transform translate-y-4 hover:translate-y-3 transition-transform">
+          <div 
+            onClick={() => setEnlargedImg('/prayverses-2.png')}
+            className="cursor-zoom-in rounded-2xl overflow-hidden border border-amber-500/20 bg-slate-950 shadow-xl transform translate-y-4 hover:translate-y-3 transition-transform"
+          >
             <Image src="/prayverses-2.png" alt="Pray Verses Screenshot 2" width={300} height={600} className="w-full h-auto object-cover" />
           </div>
-          <div className="rounded-2xl overflow-hidden border border-amber-500/20 bg-slate-950 shadow-xl transform hover:-translate-y-1 transition-transform">
+          <div 
+            onClick={() => setEnlargedImg('/prayverses-3.png')}
+            className="cursor-zoom-in rounded-2xl overflow-hidden border border-amber-500/20 bg-slate-950 shadow-xl transform hover:-translate-y-1 transition-transform"
+          >
             <Image src="/prayverses-3.png" alt="Pray Verses Screenshot 3" width={300} height={600} className="w-full h-auto object-cover" />
           </div>
         </div>
@@ -141,20 +165,45 @@ export default function Home() {
           </div>
         </div>
 
-        {/* InvoiceHive 3张真实截图展示 (全英文标识) */}
+        {/* InvoiceHive 3张真实截图展示 (增加点击放大交互) */}
         <div className="grid grid-cols-3 gap-3">
-          <div className="rounded-2xl overflow-hidden border border-cyan-500/20 bg-slate-950 shadow-xl transform hover:-translate-y-1 transition-transform">
+          <div 
+            onClick={() => setEnlargedImg('/invoicehive-1.png')}
+            className="cursor-zoom-in rounded-2xl overflow-hidden border border-cyan-500/20 bg-slate-950 shadow-xl transform hover:-translate-y-1 transition-transform"
+          >
             <Image src="/invoicehive-1.png" alt="InvoiceHive Screenshot 1" width={300} height={600} className="w-full h-auto object-cover" />
           </div>
-          <div className="rounded-2xl overflow-hidden border border-cyan-500/20 bg-slate-950 shadow-xl transform translate-y-4 hover:translate-y-3 transition-transform">
+          <div 
+            onClick={() => setEnlargedImg('/invoicehive-2.png')}
+            className="cursor-zoom-in rounded-2xl overflow-hidden border border-cyan-500/20 bg-slate-950 shadow-xl transform translate-y-4 hover:translate-y-3 transition-transform"
+          >
             <Image src="/invoicehive-2.png" alt="InvoiceHive Screenshot 2" width={300} height={600} className="w-full h-auto object-cover" />
           </div>
-          <div className="rounded-2xl overflow-hidden border border-cyan-500/20 bg-slate-950 shadow-xl transform hover:-translate-y-1 transition-transform">
+          <div 
+            onClick={() => setEnlargedImg('/invoicehive-3.png')}
+            className="cursor-zoom-in rounded-2xl overflow-hidden border border-cyan-500/20 bg-slate-950 shadow-xl transform hover:-translate-y-1 transition-transform"
+          >
             <Image src="/invoicehive-3.png" alt="InvoiceHive Screenshot 3" width={300} height={600} className="w-full h-auto object-cover" />
           </div>
         </div>
       </section>
 
+      {/* 🚀 新增：全屏图片放大遮罩层 (Lightbox) */}
+      {enlargedImg && (
+        <div 
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-[#031814]/90 backdrop-blur-md p-4 sm:p-8 cursor-zoom-out transition-opacity"
+          onClick={() => setEnlargedImg(null)}
+        >
+          {/* 使用标准 img 标签以实现自适应且不裁剪的缩放 */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img 
+            src={enlargedImg} 
+            alt="Enlarged App Screenshot" 
+            className="max-h-[95vh] max-w-[95vw] object-contain rounded-2xl shadow-[0_0_50px_rgba(251,191,36,0.15)] ring-1 ring-amber-500/20"
+          />
+        </div>
+      )}
+      
     </div>
   );
 }
