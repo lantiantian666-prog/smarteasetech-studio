@@ -5,9 +5,36 @@ import Link from 'next/link'
 
 const inter = Inter({ subsets: ['latin'] })
 
+// 🚀 新增：完整的社交媒体分享 (Open Graph & Twitter) 协议配置
 export const metadata: Metadata = {
-  title: 'SmartEaseTech Studio',
-  description: 'Crafting elegant, local-first applications.',
+  metadataBase: new URL('https://smarteasetechstudio.app'),
+  title: {
+    default: 'SmartEaseTech Studio | Local-First & Privacy-Focused Apps',
+    template: '%s | SmartEaseTech Studio',
+  },
+  description: 'Crafting minimalist, elegant, and empowering mobile applications anchored in local-first architecture and absolute privacy.',
+  openGraph: {
+    title: 'SmartEaseTech Studio | Local-First & Privacy-Focused Apps',
+    description: 'Crafting minimalist, elegant, and empowering mobile experiences.',
+    url: 'https://smarteasetechstudio.app',
+    siteName: 'SmartEaseTech Studio',
+    images: [
+      {
+        url: '/og-image.png', // 自动读取 public 文件夹下的社交名片大图
+        width: 1200,
+        height: 630,
+        alt: 'SmartEaseTech Studio Preview',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'SmartEaseTech Studio | Local-First & Privacy-Focused',
+    description: 'Minimalist, local-first applications.',
+    images: ['/og-image.png'],
+  },
 }
 
 export default function RootLayout({
