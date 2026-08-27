@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import Link from 'next/link'
+// 🚀 新增：引入谷歌官方的 GA4 组件
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -103,6 +105,8 @@ export default function RootLayout({
           </div>
         </footer>
 
+        {/* 🚀 新增：GA4 流量监控代码，静默运行于全局底部 */}
+        <GoogleAnalytics gaId="G-EYSV8LFEQX" />
       </body>
     </html>
   )
