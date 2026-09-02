@@ -134,7 +134,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 产品 3：InvoiceHive (即将上架 / Coming Soon - 青色主题) */}
+      {/* 产品 3：InvoiceHive (已正式上架 - 青色主题) */}
       <section className="p-8 sm:p-12 rounded-3xl bg-[#05221b]/40 border border-cyan-900/40 backdrop-blur-sm grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div className="space-y-6">
           <div className="flex items-center gap-3">
@@ -146,22 +146,25 @@ export default function Home() {
               className="rounded-2xl shadow-md border border-cyan-500/30"
             />
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 text-xs font-medium">
-              Business Utility • Coming Soon
+              Business Utility
             </div>
           </div>
           <h2 className="text-3xl font-bold text-white tracking-tight flex items-center gap-3">
             InvoiceHive
-            <span className="text-xs px-3 py-1 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 font-medium tracking-wide">
-              Coming Soon
-            </span>
           </h2>
           <p className="text-slate-300 font-light leading-relaxed">
             The local-first, privacy-focused invoicing and billing utility built for independent developers, freelancers, and small studios. Manage clients, generate professional invoices, and keep your financial records securely on-device.
           </p>
           <div className="pt-2">
-            <span className="inline-flex items-center gap-2 bg-slate-800/80 text-cyan-300/80 px-8 py-3.5 rounded-full font-medium border border-cyan-500/20 cursor-not-allowed select-none shadow-inner">
-              Coming Soon to App Store
-            </span>
+            <a 
+              href="https://apps.apple.com/app/id6800766422" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="inline-flex items-center gap-3 bg-cyan-600 hover:bg-cyan-500 text-white px-8 py-3.5 rounded-full font-medium shadow-lg transition-all duration-300 group"
+            >
+              <span>Download on the App Store</span>
+              <span className="group-hover:translate-x-0.5 transition-transform">&rarr;</span>
+            </a>
           </div>
         </div>
 
@@ -188,7 +191,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 🚀 新增：全屏图片放大遮罩层 (Lightbox) */}
+      {/* 🚀 全屏图片放大遮罩层 (Lightbox) */}
       {enlargedImg && (
         <div 
           className="fixed inset-0 z-[100] flex items-center justify-center bg-[#031814]/90 backdrop-blur-md p-4 sm:p-8 cursor-zoom-out transition-opacity"
