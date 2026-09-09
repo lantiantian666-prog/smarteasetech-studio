@@ -3,7 +3,7 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 
-// 🚀 彻底全自动引擎：自动递归扫描 content/posts 下的所有子文件夹
+// 🚀 终极稳定版引擎：全自动扫描、严格锁定分类排序、多重标题容错
 function getAllPosts() {
   const postsDirectory = path.join(process.cwd(), 'content/posts');
   let allPosts: any[] = [];
@@ -13,7 +13,6 @@ function getAllPosts() {
     
     categories.forEach((category) => {
       const categoryPath = path.join(postsDirectory, category);
-      // 确保是子文件夹
       if (fs.statSync(categoryPath).isDirectory()) {
         const fileNames = fs.readdirSync(categoryPath);
         fileNames.forEach((fileName) => {
@@ -22,30 +21,50 @@ function getAllPosts() {
             const fullPath = path.join(categoryPath, fileName);
             const fileContents = fs.readFileSync(fullPath, 'utf8');
             
-            // 使用 gray-matter 解析 Markdown 顶部的 Frontmatter 数据
-            const { data } = matter(fileContents);
+            const { data, content } = matter(fileContents);
 
-            // 智能计算阅读时间 (按每分钟 200 字估算)
+            // 智能计算阅读时间
             let wordCount = 1000;
             if (data.word_count_estimate) {
               const match = String(data.word_count_estimate).match(/\d+/);
               if (match) wordCount = parseInt(match[0]);
+            } else {
+              wordCount = content.length / 3;
             }
             const readTime = `${Math.ceil(wordCount / 200)} min read`;
 
-            // 智能映射分类名称
+            // 🚀 强制锁定排序权重：pet = 1 (最前), prayer = 2 (中间), invoice = 3 (下面)
             let categoryName = "Insights";
-            if (category === "pet") categoryName = "Pet Care";
-            else if (category === "invoice") categoryName = "Business Utility";
-            else if (category === "prayer") categoryName = "Prayer & Faith";
+            let sortOrder = 99;
+            if (category === "pet") {
+              categoryName = "Pet Care";
+              sortOrder = 1;
+            } else if (category === "prayer") {
+              categoryName = "Prayer & Faith";
+              sortOrder = 2;
+            } else if (category === "invoice") {
+              categoryName = "Business Utility";
+              sortOrder = 3;
+            }
 
-            // 💡 强力容错：兼容多种标题与副标题字段，绝不出现“无标题文章”
-            const articleTitle = data.title || data.heading || data.subject || "Untitled Article";
+            // 多保险标题抓取：YAML 里的 title -> heading -> 或者去正文里抓取第一个 #
+            let articleTitle = data.title || data.heading || data.subject;
+            if (!articleTitle) {
+              const matchTitle = content.match(/^#\s+(.+)$/m);
+              if (matchTitle && matchTitle[1]) {
+                articleTitle = matchTitle[1].trim();
+              } else {
+                articleTitle = slug.replace(/-/g, ' ');
+              }
+            }
+
+            // 多保险副标题抓取
             const articleSubtitle = data.meta_description || data.subtitle || data.description || "";
 
             allPosts.push({
               id: slug,
               category: category,
+              sortOrder: sortOrder,
               categoryName: categoryName,
               title: articleTitle,
               subtitle: articleSubtitle,
@@ -58,6 +77,9 @@ function getAllPosts() {
     });
   }
 
+  // 🚀 严格按权重排序：宠物(1) -> 祷告(2) -> 发票(3)
+  allPosts.sort((a, b) => a.sortOrder - b.sortOrder);
+
   return allPosts;
 }
 
@@ -67,7 +89,6 @@ export const metadata = {
 };
 
 export default function BlogIndexPage() {
-  // 引擎启动：实时拉取所有文章数据
   const BLOG_ARTICLES = getAllPosts();
 
   return (
