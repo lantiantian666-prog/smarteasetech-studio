@@ -4,6 +4,8 @@ import './globals.css'
 import Link from 'next/link'
 // 🚀 新增：引入谷歌官方的 GA4 组件
 import { GoogleAnalytics } from '@next/third-parties/google'
+// 🚀 新增：引入 Next.js 官方的异步脚本优化组件
+import Script from 'next/script'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -107,6 +109,13 @@ export default function RootLayout({
 
         {/* 🚀 新增：GA4 流量监控代码，静默运行于全局底部 */}
         <GoogleAnalytics gaId="G-EYSV8LFEQX" />
+
+        {/* 🚀 新增：Cloudflare Web Analytics 无 Cookie 隐私流量统计 */}
+        <Script 
+          src="https://static.cloudflareinsights.com/beacon.min.js"
+          data-cf-beacon='{"token": "bbd7d2072d2f407fa7435a7ad2bfc263"}'
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   )
