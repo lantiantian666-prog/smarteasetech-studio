@@ -6,54 +6,62 @@ import path from 'path';
 import matter from 'gray-matter';
 import ReactMarkdown from 'react-markdown';
 
-// 🚀 核心引擎：根据 Slug 查找并读取对应的 Markdown 纯文本
+// 🚀 核心引擎：智能遍历所有子文件夹，自动查找对应的 Markdown 文件
 function getPostBySlug(slug: string) {
   const postsDirectory = path.join(process.cwd(), 'content/posts');
-  const categories = ['pet', 'prayer', 'invoice'];
+  
+  // 递归读取 posts 下的所有子目录（pet, prayer, invoice 等）
+  if (fs.existsSync(postsDirectory)) {
+    const categories = fs.readdirSync(postsDirectory);
+    for (const category of categories) {
+      const categoryPath = path.join(postsDirectory, category);
+      if (fs.statSync(categoryPath).isDirectory()) {
+        const fullPath = path.join(categoryPath, `${slug}.md`);
+        if (fs.existsSync(fullPath)) {
+          const fileContents = fs.readFileSync(fullPath, 'utf8');
+          const { data, content } = matter(fileContents);
+          
+          let wordCount = 1000;
+          if (data.word_count_estimate) {
+            const match = data.word_count_estimate.match(/\d+/);
+            if (match) wordCount = parseInt(match[0]);
+          }
 
-  for (const category of categories) {
-    const fullPath = path.join(postsDirectory, category, `${slug}.md`);
-    if (fs.existsSync(fullPath)) {
-      const fileContents = fs.readFileSync(fullPath, 'utf8');
-      const { data, content } = matter(fileContents);
-      
-      let wordCount = 1000;
-      if (data.word_count_estimate) {
-        const match = data.word_count_estimate.match(/\d+/);
-        if (match) wordCount = parseInt(match[0]);
+          return {
+            id: slug,
+            category: category,
+            title: data.title || 'Untitled',
+            subtitle: data.meta_description || data.subtitle || '',
+            date: data.date || 'September 2026',
+            readTime: `${Math.ceil(wordCount / 200)} min read`,
+            content: content,
+          };
+        }
       }
-
-      return {
-        id: slug,
-        category: category,
-        title: data.title || 'Untitled',
-        subtitle: data.meta_description || data.subtitle || '',
-        date: data.date || 'September 2026',
-        readTime: `${Math.ceil(wordCount / 200)} min read`,
-        content: content,
-      };
     }
   }
   return null;
 }
 
-// 🚀 核心引擎：为所有存在的 MD 文件预生成静态路由
+// 🚀 核心引擎：动态全自动扫描所有子目录下的所有 .md 文件，生成路由
 export function generateStaticParams() {
   const postsDirectory = path.join(process.cwd(), 'content/posts');
-  const categories = ['pet', 'prayer', 'invoice'];
   let paths: any[] = [];
 
-  categories.forEach((category) => {
-    const categoryPath = path.join(postsDirectory, category);
-    if (fs.existsSync(categoryPath)) {
-      const fileNames = fs.readdirSync(categoryPath);
-      fileNames.forEach((fileName) => {
-        if (fileName.endsWith('.md')) {
-          paths.push({ slug: fileName.replace(/\.md$/, '') });
-        }
-      });
-    }
-  });
+  if (fs.existsSync(postsDirectory)) {
+    const categories = fs.readdirSync(postsDirectory);
+    categories.forEach((category) => {
+      const categoryPath = path.join(postsDirectory, category);
+      if (fs.statSync(categoryPath).isDirectory()) {
+        const fileNames = fs.readdirSync(categoryPath);
+        fileNames.forEach((fileName) => {
+          if (fileName.endsWith('.md')) {
+            paths.push({ slug: fileName.replace(/\.md$/, '') });
+          }
+        });
+      }
+    });
+  }
 
   return paths;
 }
@@ -74,7 +82,7 @@ export default async function BlogPost({ params }: any) {
   }
 
   // ---------------------------------------------------------
-  // 智能 CTA (Call to Action) 下载卡片判断逻辑
+  // 🚀 智能 CTA (Call to Action) 下载卡片判断逻辑
   // ---------------------------------------------------------
   const isPet = article.category === "pet";
   const isInvoice = article.category === "invoice";
