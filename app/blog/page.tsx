@@ -1,8 +1,10 @@
 import Link from 'next/link';
 
-// 12 篇文章的元数据索引 (6篇宠物 + 6篇祷告)
+// 21 篇文章的元数据索引 (9篇宠物 + 6篇祷告 + 6篇发票商业)
 const BLOG_ARTICLES = [
-  // 宠物分类 (Pet Care - 6篇)
+  // ---------------------------------------------------------
+  // 宠物分类 (Pet Care - 9篇)
+  // ---------------------------------------------------------
   {
     id: "how-much-to-feed-dog-cat",
     category: "pet",
@@ -57,8 +59,37 @@ const BLOG_ARTICLES = [
     date: "August 2026",
     readTime: "6 min read",
   },
+  {
+    id: "how-to-read-pet-food-label",
+    category: "pet",
+    categoryName: "Pet Care",
+    title: "How to Actually Read a Pet Food Label (Most Owners Skip the Number That Matters Most)",
+    subtitle: "Guaranteed analysis, calorie content, and AAFCO statements explained — a plain-English guide to reading pet food labels and finding the number you actually need.[cite: 1]",
+    date: "September 2026",
+    readTime: "5 min read",
+  },
+  {
+    id: "multi-person-pet-care-without-cloud",
+    category: "pet",
+    categoryName: "Pet Care",
+    title: "How to Coordinate Pet Care Across Multiple People Without a Shared Cloud Account",
+    subtitle: "Living with roommates or family members who all feed the same pet? Here's why \"who fed the dog today\" is a real problem, and how to solve it without a cloud account.[cite: 2]",
+    date: "September 2026",
+    readTime: "5 min read",
+  },
+  {
+    id: "senior-dog-cat-nutrition-guide",
+    category: "pet",
+    categoryName: "Pet Care",
+    title: "Senior Dog and Cat Nutrition — When and How to Adjust Feeding as Your Pet Ages",
+    subtitle: "How aging changes a dog or cat's calorie needs, when to start adjusting feeding for a senior pet, and the mistakes that lead to unnoticed weight change in older pets.[cite: 3]",
+    date: "September 2026",
+    readTime: "5 min read",
+  },
 
+  // ---------------------------------------------------------
   // 祷告分类 (Prayer & Faith - 6篇)
+  // ---------------------------------------------------------
   {
     id: "how-to-start-a-prayer-journal",
     category: "prayer",
@@ -112,12 +143,70 @@ const BLOG_ARTICLES = [
     subtitle: "A practical guide to prayer app privacy — data collection, local storage, encryption, and questions to ask.",
     date: "August 2026",
     readTime: "6 min read",
+  },
+
+  // ---------------------------------------------------------
+  // 商业工具分类 (Business Utility - 6篇)
+  // ---------------------------------------------------------
+  {
+    id: "convert-estimate-to-invoice-without-retyping",
+    category: "business",
+    categoryName: "Business Utility",
+    title: "The Best Way to Convert an Estimate Into an Invoice (Without Re-Typing Everything)",
+    subtitle: "Why rebuilding a document from scratch after a client says \"yes\" is a waste of time — and what a proper estimate-to-invoice workflow looks like.[cite: 4]",
+    date: "September 2026",
+    readTime: "4 min read",
+  },
+  {
+    id: "how-to-create-an-invoice-freelancer-guide",
+    category: "business",
+    categoryName: "Business Utility",
+    title: "How to Create an Invoice as a Freelancer: Free Step-by-Step Guide (2026)",
+    subtitle: "Learn exactly what a freelance invoice needs, see a real example, and get paid faster with this simple, no-nonsense walkthrough.[cite: 5]",
+    date: "September 2026",
+    readTime: "5 min read",
+  },
+  {
+    id: "what-must-be-on-small-business-invoice-legal",
+    category: "business",
+    categoryName: "Business Utility",
+    title: "What Must Be on a Small Business Invoice? Legal Requirements in the US, UK, Canada & Australia",
+    subtitle: "A plain-English breakdown of the invoice fields that make your billing legally valid in each English-speaking market.[cite: 6]",
+    date: "September 2026",
+    readTime: "5 min read",
+  },
+  {
+    id: "invoice-vs-estimate-vs-quote-difference",
+    category: "business",
+    categoryName: "Business Utility",
+    title: "Invoice vs. Estimate vs. Quote: What's the Difference (and When to Use Each)",
+    subtitle: "Freelancers and contractors often use these words interchangeably — here's exactly what separates them and how to use each one correctly.[cite: 7]",
+    date: "September 2026",
+    readTime: "4 min read",
+  },
+  {
+    id: "sales-tax-invoices-all-50-us-states-guide",
+    category: "business",
+    categoryName: "Business Utility",
+    title: "How to Calculate Sales Tax for Invoices Across All 50 US States",
+    subtitle: "US sales tax isn't federal — here's how state-by-state rates actually work, and how to stop guessing on every invoice you send.[cite: 8]",
+    date: "September 2026",
+    readTime: "5 min read",
+  },
+  {
+    id: "contractor-invoicing-101-get-paid-faster",
+    category: "business",
+    categoryName: "Business Utility",
+    title: "Contractor Invoicing 101: How to Get Paid Faster on Every Job",
+    subtitle: "Practical invoicing habits for general contractors and tradespeople — from deposits to photo documentation to avoiding payment disputes.[cite: 9]",
+    date: "September 2026",
+    readTime: "4 min read",
   }
 ];
 
 export const metadata = {
   title: "Blog & Resources | SmartEaseTech Studio",
-  description: "Explore our expert guides on pet nutrition, science-based feeding, and private prayer journaling.",
+  description: "Explore our expert guides on pet nutrition, professional invoicing, and private prayer journaling.",
 };
 
 export default function BlogIndexPage() {
@@ -130,35 +219,53 @@ export default function BlogIndexPage() {
           Insights & <span className="bg-gradient-to-r from-amber-300 to-emerald-400 bg-clip-text text-transparent">Resources</span>
         </h1>
         <p className="text-base text-slate-400 font-light">
-          In-depth guides, veterinary nutrition science, and reflections on private, local-first software engineering.
+          In-depth guides, veterinary nutrition science, professional invoicing tips, and reflections on private, local-first software engineering.
         </p>
       </div>
 
       {/* 文章网格列表 */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {BLOG_ARTICLES.map((article) => {
-          const isPet = article.category === "pet";
+          // 智能卡片颜色判定 (翡翠绿 / 青色 / 琥珀金)
+          let badgeStyle = "";
+          let borderHoverStyle = "";
+          let titleHoverStyle = "";
+          let linkHoverStyle = "";
+          
+          if (article.category === "pet") {
+            badgeStyle = "bg-emerald-500/10 text-emerald-300 border border-emerald-500/20";
+            borderHoverStyle = "hover:border-emerald-500/40";
+            titleHoverStyle = "group-hover:text-emerald-400";
+            linkHoverStyle = "text-emerald-400/80 group-hover:text-emerald-400";
+          } else if (article.category === "business") {
+            badgeStyle = "bg-cyan-500/10 text-cyan-300 border border-cyan-500/20";
+            borderHoverStyle = "hover:border-cyan-500/40";
+            titleHoverStyle = "group-hover:text-cyan-400";
+            linkHoverStyle = "text-cyan-400/80 group-hover:text-cyan-400";
+          } else {
+            badgeStyle = "bg-amber-500/10 text-amber-300 border border-amber-500/20";
+            borderHoverStyle = "hover:border-amber-500/40";
+            titleHoverStyle = "group-hover:text-amber-400";
+            linkHoverStyle = "text-amber-400/80 group-hover:text-amber-400";
+          }
+
           return (
             <Link 
               key={article.id} 
               href={`/blog/${article.id}`}
-              className="group relative p-8 rounded-3xl bg-[#05221b]/40 border border-emerald-900/40 hover:border-amber-500/40 transition-all duration-300 hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)] flex flex-col justify-between"
+              className={`group relative p-8 rounded-3xl bg-[#05221b]/40 border border-emerald-900/40 ${borderHoverStyle} transition-all duration-300 hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)] flex flex-col justify-between`}
             >
               <div>
                 {/* 分类标签与阅读时间 */}
                 <div className="flex items-center justify-between text-xs mb-4">
-                  <span className={`px-3 py-1 rounded-full font-medium ${
-                    isPet 
-                      ? 'bg-emerald-500/10 text-emerald-300 border border-emerald-500/20' 
-                      : 'bg-amber-500/10 text-amber-300 border border-amber-500/20'
-                  }`}>
+                  <span className={`px-3 py-1 rounded-full font-medium ${badgeStyle}`}>
                     {article.categoryName}
                   </span>
                   <span className="text-slate-500">{article.readTime}</span>
                 </div>
 
                 {/* 标题 */}
-                <h2 className="text-xl font-semibold text-white group-hover:text-amber-300 transition-colors mb-3 leading-snug">
+                <h2 className={`text-xl font-semibold text-white transition-colors mb-3 leading-snug ${titleHoverStyle}`}>
                   {article.title}
                 </h2>
 
@@ -169,7 +276,7 @@ export default function BlogIndexPage() {
               </div>
 
               {/* 底部阅读更多引导 */}
-              <div className="flex items-center text-xs font-medium text-amber-400/80 group-hover:text-amber-300 gap-1 pt-4 border-t border-emerald-900/30">
+              <div className={`flex items-center text-xs font-medium gap-1 pt-4 border-t border-emerald-900/30 ${linkHoverStyle}`}>
                 <span>Read Full Guide</span>
                 <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
               </div>
