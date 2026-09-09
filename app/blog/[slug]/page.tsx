@@ -6,11 +6,10 @@ import path from 'path';
 import matter from 'gray-matter';
 import ReactMarkdown from 'react-markdown';
 
-// 🚀 核心引擎：智能遍历所有子文件夹，自动查找对应的 Markdown 文件
+// 🚀 核心引擎：智能遍历所有子文件夹，兼容多种标题字段的 Markdown 读取
 function getPostBySlug(slug: string) {
   const postsDirectory = path.join(process.cwd(), 'content/posts');
   
-  // 递归读取 posts 下的所有子目录（pet, prayer, invoice 等）
   if (fs.existsSync(postsDirectory)) {
     const categories = fs.readdirSync(postsDirectory);
     for (const category of categories) {
@@ -23,15 +22,19 @@ function getPostBySlug(slug: string) {
           
           let wordCount = 1000;
           if (data.word_count_estimate) {
-            const match = data.word_count_estimate.match(/\d+/);
+            const match = String(data.word_count_estimate).match(/\d+/);
             if (match) wordCount = parseInt(match[0]);
           }
+
+          // 💡 强力容错：兼容多种标题与描述字段名
+          const articleTitle = data.title || data.heading || data.subject || "Untitled Article";
+          const articleSubtitle = data.meta_description || data.subtitle || data.description || "";
 
           return {
             id: slug,
             category: category,
-            title: data.title || 'Untitled',
-            subtitle: data.meta_description || data.subtitle || '',
+            title: articleTitle,
+            subtitle: articleSubtitle,
             date: data.date || 'September 2026',
             readTime: `${Math.ceil(wordCount / 200)} min read`,
             content: content,
@@ -43,7 +46,6 @@ function getPostBySlug(slug: string) {
   return null;
 }
 
-// 🚀 核心引擎：动态全自动扫描所有子目录下的所有 .md 文件，生成路由
 export function generateStaticParams() {
   const postsDirectory = path.join(process.cwd(), 'content/posts');
   let paths: any[] = [];
@@ -81,9 +83,6 @@ export default async function BlogPost({ params }: any) {
     notFound();
   }
 
-  // ---------------------------------------------------------
-  // 🚀 智能 CTA (Call to Action) 下载卡片判断逻辑
-  // ---------------------------------------------------------
   const isPet = article.category === "pet";
   const isInvoice = article.category === "invoice";
   
@@ -134,14 +133,10 @@ export default async function BlogPost({ params }: any) {
           </p>
         </div>
         
-        {/* ReactMarkdown 全自动解析文本并排版 */}
         <div className="prose prose-invert max-w-none mb-16">
           <ReactMarkdown>{article.content}</ReactMarkdown>
         </div>
 
-        {/* --------------------------------------------------------- */}
-        {/* 智能下载引导横幅 (Smart App CTA Banner) */}
-        {/* --------------------------------------------------------- */}
         <div className={`mt-16 p-8 rounded-3xl border border-${ctaColorTheme}-500/30 bg-white/5 flex flex-col md:flex-row items-center gap-6 justify-between`}>
           <div className="flex items-center gap-6 text-left">
             <Image src={ctaAppIcon} alt={ctaAppName} width={80} height={80} className="rounded-2xl shadow-lg border border-white/10 shrink-0" />

@@ -3,54 +3,60 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 
-// 🚀 核心引擎：全自动扫描本地文件夹并提取 Markdown 元数据
+// 🚀 彻底全自动引擎：自动递归扫描 content/posts 下的所有子文件夹
 function getAllPosts() {
   const postsDirectory = path.join(process.cwd(), 'content/posts');
-  const categories = ['pet', 'prayer', 'invoice']; // 自动扫描您的三大独立分类
   let allPosts: any[] = [];
 
-  categories.forEach((category) => {
-    const categoryPath = path.join(postsDirectory, category);
-    // 确保文件夹存在，避免报错
-    if (fs.existsSync(categoryPath)) {
-      const fileNames = fs.readdirSync(categoryPath);
-      fileNames.forEach((fileName) => {
-        if (fileName.endsWith('.md')) {
-          const slug = fileName.replace(/\.md$/, '');
-          const fullPath = path.join(categoryPath, fileName);
-          const fileContents = fs.readFileSync(fullPath, 'utf8');
-          
-          // 使用 gray-matter 解析 Markdown 顶部的 Frontmatter 数据
-          const { data } = matter(fileContents);
+  if (fs.existsSync(postsDirectory)) {
+    const categories = fs.readdirSync(postsDirectory);
+    
+    categories.forEach((category) => {
+      const categoryPath = path.join(postsDirectory, category);
+      // 确保是子文件夹
+      if (fs.statSync(categoryPath).isDirectory()) {
+        const fileNames = fs.readdirSync(categoryPath);
+        fileNames.forEach((fileName) => {
+          if (fileName.endsWith('.md')) {
+            const slug = fileName.replace(/\.md$/, '');
+            const fullPath = path.join(categoryPath, fileName);
+            const fileContents = fs.readFileSync(fullPath, 'utf8');
+            
+            // 使用 gray-matter 解析 Markdown 顶部的 Frontmatter 数据
+            const { data } = matter(fileContents);
 
-          // 智能计算阅读时间 (按每分钟 200 字估算)
-          let wordCount = 1000;
-          if (data.word_count_estimate) {
-            const match = data.word_count_estimate.match(/\d+/);
-            if (match) wordCount = parseInt(match[0]);
+            // 智能计算阅读时间 (按每分钟 200 字估算)
+            let wordCount = 1000;
+            if (data.word_count_estimate) {
+              const match = String(data.word_count_estimate).match(/\d+/);
+              if (match) wordCount = parseInt(match[0]);
+            }
+            const readTime = `${Math.ceil(wordCount / 200)} min read`;
+
+            // 智能映射分类名称
+            let categoryName = "Insights";
+            if (category === "pet") categoryName = "Pet Care";
+            else if (category === "invoice") categoryName = "Business Utility";
+            else if (category === "prayer") categoryName = "Prayer & Faith";
+
+            // 💡 强力容错：兼容多种标题与副标题字段，绝不出现“无标题文章”
+            const articleTitle = data.title || data.heading || data.subject || "Untitled Article";
+            const articleSubtitle = data.meta_description || data.subtitle || data.description || "";
+
+            allPosts.push({
+              id: slug,
+              category: category,
+              categoryName: categoryName,
+              title: articleTitle,
+              subtitle: articleSubtitle,
+              date: data.date || 'September 2026',
+              readTime: readTime,
+            });
           }
-          const readTime = `${Math.ceil(wordCount / 200)} min read`;
-
-          // 映射分类名称
-          let categoryName = "Insights";
-          if (category === "pet") categoryName = "Pet Care";
-          else if (category === "invoice") categoryName = "Business Utility";
-          else if (category === "prayer") categoryName = "Prayer & Faith";
-
-          allPosts.push({
-            id: slug,
-            category: category,
-            categoryName: categoryName,
-            title: data.title || 'Untitled Article',
-            // 自动将 meta_description 映射为副标题摘要
-            subtitle: data.meta_description || data.subtitle || '',
-            date: data.date || 'September 2026',
-            readTime: readTime,
-          });
-        }
-      });
-    }
-  });
+        });
+      }
+    });
+  }
 
   return allPosts;
 }
@@ -78,7 +84,6 @@ export default function BlogIndexPage() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {BLOG_ARTICLES.map((article) => {
-          // 智能卡片颜色判定 (发票专区 invoice 触发青色)
           let badgeStyle = "";
           let borderHoverStyle = "";
           let titleHoverStyle = "";
