@@ -1,10 +1,8 @@
-URL Slug: prayer-for-someone-who-is-sick
-
-Title: How to Pray for Someone Who Is Sick: Scripture-Based Prayers That Help
-
-Subtitle: Practical guidance and Bible-based prayers for when someone you love is sick, including what to say when you don't know what to say.
-
-Content:
+---
+title: "How to Pray for Someone Who Is Sick: Scripture-Based Prayers That Help"
+meta_description: "Practical guidance and Bible-based prayers for when someone you love is sick, including what to say when you don't know what to say."
+date: "September 2026"
+---
 
 ## When Someone You Love Is Sick
 

@@ -1,10 +1,8 @@
-URL Slug: bible-verses-for-anxiety
-
-Title: Bible Verses for Anxiety: 20 Scriptures to Calm a Worried Heart
-
-Subtitle: Twenty comforting Bible verses for anxiety and worry, with context and guidance on how to pray through them when your mind won't settle.
-
-Content:
+---
+title: "Bible Verses for Anxiety: 20 Scriptures to Calm a Worried Heart"
+meta_description: "Twenty comforting Bible verses for anxiety and worry, with context and guidance on how to pray through them when your mind won't settle."
+date: "September 2026"
+---
 
 ## When Anxiety Feels Overwhelming
 

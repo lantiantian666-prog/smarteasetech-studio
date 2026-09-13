@@ -1,10 +1,8 @@
-URL Slug: contractor-invoicing-101-get-paid-faster
-
-Title: Contractor Invoicing 101: How to Get Paid Faster on Every Job
-
-Subtitle: Practical invoicing habits for general contractors and tradespeople — from deposits to photo documentation to avoiding payment disputes.
-
-Content:
+---
+title: "Contractor Invoicing 101: How to Get Paid Faster on Every Job"
+meta_description: "Practical invoicing habits for general contractors and tradespeople — from deposits to photo documentation to avoiding payment disputes."
+date: "September 2026"
+---
 
 Contractors face a specific set of invoicing challenges that most generic advice doesn't address: jobs that span weeks or months, materials costs that shift mid-project, clients who want proof of work before releasing payment, and the constant juggling act of tracking who owes what across a dozen active jobs. Here's a practical, contractor-specific playbook for invoicing that actually gets you paid on time.
 

@@ -1,10 +1,8 @@
-URL Slug: sales-tax-invoices-all-50-us-states-guide
-
-Title: How to Calculate Sales Tax for Invoices Across All 50 US States
-
-Subtitle: US sales tax isn't federal — here's how state-by-state rates actually work, and how to stop guessing on every invoice you send.
-
-Content:
+---
+title: "How to Calculate Sales Tax for Invoices Across All 50 US States"
+meta_description: "US sales tax isn't federal — here's how state-by-state rates actually work, and how to stop guessing on every invoice you send."
+date: "September 2026"
+---
 
 If you're a freelancer or small business owner billing clients in more than one US state, you've probably run into the single most confusing part of American invoicing: there is no national sales tax. Every state sets its own rate — and some states have none at all — which means the "correct" tax rate on your invoice depends entirely on where your client is located (or, depending on the state and the nature of your service, sometimes where the work is performed or where the goods are delivered).
 

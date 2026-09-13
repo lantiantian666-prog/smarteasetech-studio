@@ -1,10 +1,8 @@
-URL Slug: is-it-safe-to-use-a-prayer-app
-
-Title: Is It Safe to Use a Prayer App? What to Check Before You Trust One With Your Prayers
-
-Subtitle: A practical guide to prayer app privacy — what data gets collected, what "encrypted" actually means, and questions worth asking before you download one.
-
-Content:
+---
+title: "Is It Safe to Use a Prayer App? What to Check Before You Trust One With Your Prayers"
+meta_description: "A practical guide to prayer app privacy — what data gets collected, what \"encrypted\" actually means, and questions worth asking before you download one."
+date: "September 2026"
+---
 
 ## Why Privacy Matters More for Prayer Apps Than Most
 

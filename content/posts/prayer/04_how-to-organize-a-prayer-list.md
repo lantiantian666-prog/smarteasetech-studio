@@ -1,10 +1,8 @@
-URL Slug: how-to-organize-a-prayer-list
-
-Title: How to Organize a Prayer List So You Actually Use It
-
-Subtitle: A step-by-step system for organizing a prayer list by person and category, so nothing important gets forgotten in the busyness of life.
-
-Content:
+---
+title: "How to Organize a Prayer List So You Actually Use It"
+meta_description: "A step-by-step system for organizing a prayer list by person and category, so nothing important gets forgotten in the busyness of life."
+date: "September 2026"
+---
 
 ## Why Most Prayer Lists Fall Apart
 

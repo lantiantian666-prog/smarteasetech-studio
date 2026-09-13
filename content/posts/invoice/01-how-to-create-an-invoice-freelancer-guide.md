@@ -1,10 +1,8 @@
-URL Slug: how-to-create-an-invoice-freelancer-guide
-
-Title: How to Create an Invoice as a Freelancer: Free Step-by-Step Guide (2026)
-
-Subtitle: Learn exactly what a freelance invoice needs, see a real example, and get paid faster with this simple, no-nonsense walkthrough.
-
-Content:
+---
+title: "How to Create an Invoice as a Freelancer: Free Step-by-Step Guide (2026)"
+meta_description: "Learn exactly what a freelance invoice needs, see a real example, and get paid faster with this simple, no-nonsense walkthrough."
+date: "September 2026"
+---
 
 If you're a freelancer, contractor, or solo business owner, invoicing is the one piece of paperwork standing between the work you've already finished and the money you've already earned. Yet a surprising number of freelancers still send invoices that are missing key information, formatted inconsistently, or built from a recycled Word document that's been edited so many times nobody remembers the original template. That confusion costs you time — and sometimes it costs you money, because a sloppy or incomplete invoice is one of the most common reasons clients delay payment.
 

@@ -1,10 +1,8 @@
-URL Slug: how-to-track-answered-prayers
-
-Title: How to Track Answered Prayers (And Why It Might Change How You Pray)
-
-Subtitle: Why keeping a record of answered prayers builds faith over time, and a simple system for tracking them without much effort.
-
-Content:
+---
+title: "How to Track Answered Prayers (And Why It Might Change How You Pray)"
+meta_description: "Why keeping a record of answered prayers builds faith over time, and a simple system for tracking them without much effort."
+date: "September 2026"
+---
 
 ## The Prayers We Forget We Prayed
 

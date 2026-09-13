@@ -1,10 +1,8 @@
-URL Slug: how-to-start-a-prayer-journal
-
-Title: How to Start a Prayer Journal: A Simple Guide for Beginners
-
-Subtitle: A practical, no-pressure guide to starting a prayer journal — what to write, how often, and why it deepens your prayer life.
-
-Content:
+---
+title: "How to Start a Prayer Journal: A Simple Guide for Beginners"
+meta_description: "A practical, no-pressure guide to starting a prayer journal — what to write, how often, and why it deepens your prayer life."
+date: "September 2026"
+---
 
 ## Why Keep a Prayer Journal?
 

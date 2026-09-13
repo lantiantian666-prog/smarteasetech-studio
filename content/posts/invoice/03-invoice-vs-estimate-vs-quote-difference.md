@@ -1,10 +1,8 @@
-URL Slug: invoice-vs-estimate-vs-quote-difference
-
-Title: Invoice vs. Estimate vs. Quote: What's the Difference (and When to Use Each)
-
-Subtitle: Freelancers and contractors often use these words interchangeably — here's exactly what separates them and how to use each one correctly.
-
-Content:
+---
+title: "Invoice vs. Estimate vs. Quote: What's the Difference (and When to Use Each)"
+meta_description: "Freelancers and contractors often use these words interchangeably — here's exactly what separates them and how to use each one correctly."
+date: "September 2026"
+---
 
 "Should I send an invoice or an estimate?" It's one of the most common points of confusion for new freelancers and contractors, and the terms get used interchangeably so often that it's easy to lose track of what actually separates them. Getting this right matters — using the wrong document at the wrong stage of a project can confuse clients about what they owe and when, and in some cases can create real accounting headaches down the line.
 

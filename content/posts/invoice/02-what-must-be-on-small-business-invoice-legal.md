@@ -1,10 +1,8 @@
-URL Slug: what-must-be-on-small-business-invoice-legal
-
-Title: What Must Be on a Small Business Invoice? Legal Requirements in the US, UK, Canada & Australia
-
-Subtitle: A plain-English breakdown of the invoice fields that make your billing legally valid in each English-speaking market.
-
-Content:
+---
+title: "What Must Be on a Small Business Invoice? Legal Requirements in the US, UK, Canada & Australia"
+meta_description: "A plain-English breakdown of the invoice fields that make your billing legally valid in each English-speaking market."
+date: "September 2026"
+---
 
 One of the most common questions small business owners and freelancers ask is: "Is my invoice actually legal?" The good news is that in the US, UK, Canada, and Australia, invoicing requirements are far less complicated than most people assume — there's no government-issued invoice template, no mandatory software, and (outside a few specific industries) no need for a company seal. What you do need is consistency and a handful of required fields. This article breaks those down country by country, plus the requirements every jurisdiction shares.
 

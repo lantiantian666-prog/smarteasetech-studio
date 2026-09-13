@@ -1,10 +1,8 @@
-URL Slug: convert-estimate-to-invoice-without-retyping
-
-Title: The Best Way to Convert an Estimate Into an Invoice (Without Re-Typing Everything)
-
-Subtitle: Why rebuilding a document from scratch after a client says "yes" is a waste of time — and what a proper estimate-to-invoice workflow looks like.
-
-Content:
+---
+title: "The Best Way to Convert an Estimate Into an Invoice (Without Re-Typing Everything)"
+meta_description: "Why rebuilding a document from scratch after a client says \"yes\" is a waste of time — and what a proper estimate-to-invoice workflow looks like."
+date: "September 2026"
+---
 
 Here's a scenario every freelancer and contractor knows well: you spend twenty minutes carefully building an itemized estimate, the client approves it, work gets done — and then you sit down to invoice and... start over. Re-type the client's information. Re-add every line item. Re-check your math. It's redundant, it's slow, and worse, it's a place where small mistakes creep in — a line item quietly dropped, a quantity typo, a total that doesn't quite match what was originally approved.
 
