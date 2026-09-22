@@ -133,7 +133,8 @@ export default async function BlogPost({ params }: any) {
           </p>
         </div>
         
-        <div className="prose prose-invert max-w-none mb-16">
+        {/* 🚀 在这里加入了 prose-lg，让文章正文的字体和行距整体放大一号 */}
+        <div className="prose prose-invert prose-lg max-w-none mb-16">
           <ReactMarkdown>{article.content}</ReactMarkdown>
         </div>
 

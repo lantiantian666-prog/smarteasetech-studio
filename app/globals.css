@@ -14,6 +14,11 @@
 
 /* 强制锁定全局暗黑模式与工作室深绿底色，彻底杜绝手机端发白和反光 */
 html, body {
+  /* 🚀 核心放大引擎：将基础字号放大 12.5%。
+     原本最小的 text-xs (12px) 会自动变成 13.5px，
+     text-sm (14px) 会变成将近 16px。全站等比放大，极其护眼！ */
+  font-size: 112.5%; 
+  
   background-color: #031814;
   color: #f1f5f9;
   color-scheme: dark;
