@@ -90,12 +90,14 @@ export default async function BlogPost({ params }: any) {
 
   if (isPet) {
     ctaAppName = "PawOptima Steward";
-    ctaAppSlogan = "The complete, science-based feeding and health system for dogs and cats — 100% offline, no subscription, no account.";
+    // 🚀 已修改：删除了 "no subscription" 字眼，适应新的订阅制商业模式
+    ctaAppSlogan = "The complete, science-based feeding and health system for dogs and cats — 100% offline, no account required.";
     ctaAppIcon = "/pawoptima-icon.png";
     ctaAppLink = "https://apps.apple.com/app/id6782809353";
     ctaColorTheme = "emerald";
   } else if (isInvoice) {
     ctaAppName = "InvoiceHive";
+    // 发票 App 此前的文案没有误导性字眼，保持原样即可
     ctaAppSlogan = "The local-first, privacy-focused invoicing and billing utility built for independent developers, freelancers, and small studios.";
     ctaAppIcon = "/invoicehive-icon.png";
     ctaAppLink = "https://apps.apple.com/app/id6800766422";
