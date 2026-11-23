@@ -62,11 +62,6 @@ Focus on observing the behavior before making aggressive changes. A short baseli
 
 Review the choice after a few weeks. If the data cannot answer a useful question, the measure may be wrong. The goal is to produce a record that is both easy to maintain and accurate enough to guide a decision.
 
-## Related Practical Guides
-
-- [The Two-Minute Habit Method: Start Small and Track Honestly](/blog/25-two-minute-habit-smallest-viable-action)
-- [Habit Tracking Data Quality: Avoid Misleading Progress Charts](/blog/45-habit-tracking-data-quality-missing-entries)
-
 ## The Bottom Line
 
 Choose a tracking method by the kind of evidence you need, not by the visual appearance of a progress chart. Completion is efficient, counts capture frequency, duration captures time, values capture measured quantities, and reduction tracking handles behaviors where less is better. Precise definitions and stable units make trends trustworthy; complicated logging for its own sake does not.

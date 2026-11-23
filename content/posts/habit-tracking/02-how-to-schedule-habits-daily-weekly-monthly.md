@@ -68,10 +68,11 @@ Make one adjustment at a time. Reducing four sessions to three, for example, cha
 
 A well-defined routine creates meaningful evidence. An unrealistic one mostly creates noise.
 
-## Related Practical Guides
+## Put the Schedule Into Practice in HabitSense
 
-- [How to Start Habit Tracking: A Simple Three-Habit Plan](/blog/22-start-habit-tracker-three-habits-beginner)
-- [Habit Tracking for Shift Workers: Routines Without Fixed Hours](/blog/28-habit-tracker-for-shift-workers-irregular-hours)
+When creating a habit in HabitSense, begin with the frequency you can actually sustain. A daily reading routine and a weekly planning routine should not be judged against the same calendar expectations. Choose a schedule that reflects the commitment, then select a record type that matches the action: completion for a finished task, duration for time invested, or a numeric record when the amount matters.
+
+After a few weeks, use Behavior Landscape to see how the recorded days are distributed. The month view helps reveal recurring gaps without assuming that every unmarked day was supposed to be active. If the schedule is repeatedly too ambitious, revise the plan instead of trying to manufacture a perfect streak. The value of HabitSense here is the connection between **what you planned**, **what you recorded**, and **what the resulting pattern actually means**.
 
 ## The Bottom Line
 

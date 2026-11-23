@@ -10,7 +10,7 @@ We built Behavior Landscape around this idea: a visual history is useful when it
 
 A streak compresses a history into one number. A habit heatmap preserves the sequence. Each day occupies a position on a calendar, making timing, clusters, gaps, and changes in regularity visible. When someone asks whether a routine is sustainable, the distribution of actions may be more useful than the length of the longest uninterrupted run.
 
-HabitSense calls its calendar-style visualization **Behavior Landscape**. The App Store description presents habits as a picture made from daily squares. Day and month views are available in the free version, while quarter, year, and all-time views are Pro features. The longer views matter when the question is seasonal change rather than this week's result.
+We created **Behavior Landscape** to turn a habit history into a calendar-style picture, with one square representing each day. We include day and month views in HabitSense Free; quarter, year, and all-time views are available in Pro. The longer views matter when the question is seasonal change rather than this week's result.
 
 ## Read Patterns Before Interpreting Scores
 
@@ -66,10 +66,11 @@ The most useful result of a heatmap review is a small, testable change. If the s
 
 A landscape works especially well alongside completion measures, momentum, and notes, because each layer contributes a different perspective: timing, volume, direction, and context. None should be interpreted as the complete truth about a person.
 
-## Related Practical Guides
+## Explore the Same History at Different Scales in HabitSense
 
-- [Monthly Habit Audit: What to Keep, Change, or Stop](/blog/43-monthly-habit-audit-review-template)
-- [Quarterly vs. Yearly Habit Reviews: What Each Time Frame Reveals](/blog/44-quarterly-yearly-habit-trends-review)
+We designed **Behavior Landscape** in HabitSense to make activity visible across time instead of reducing a routine to its current streak. Start with the month view and look for gaps, clusters, and repeating days. Then ask what was scheduled during those periods. A bright cluster is not necessarily proof of improvement; it may reflect a temporary change in availability or expectations.
+
+HabitSense Free provides day and month Landscape views. Pro adds quarter, year, and all-history views for people who need to examine longer periods. The practical difference is the question each timescale can answer: a month can expose a recent pattern, while a year can help place a difficult season in context. A useful visualization should encourage interpretation, not reward coloring every cell.
 
 ## The Bottom Line
 
