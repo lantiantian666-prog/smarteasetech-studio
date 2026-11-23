@@ -10,9 +10,9 @@ A habit tracker is easy to understand when everything goes according to plan: ch
 
 The more useful question is not simply, "How many days in a row did I succeed?" It is, "What does my behavior look like over time, and what can I learn from it?"
 
-HabitSense is a habit tracker for iPhone and iPad built around that distinction. It combines quick daily records with visual history, progress measures, pattern discovery, goals, and recovery tracking. Its stated approach is local-first: habit records stay on the device, and its metrics are calculated on-device using defined rules rather than requiring an online account.
+We built HabitSense for iPhone and iPad around that distinction. It combines quick daily records with visual history, progress measures, pattern discovery, goals, and recovery tracking. We built HabitSense with a local-first approach: habit records stay on the device, and its metrics are calculated on-device using defined rules rather than requiring an online account.
 
-Understanding that approach provides a practical framework for anyone who wants to build lasting routines without turning daily tracking into another source of pressure.
+This is the principle behind our product decisions at SmartEaseTech Studio: make daily tracking fast, show the long-term evidence clearly, and leave personal records under the user’s control. We want habit data to inform decisions without turning missed days into a source of pressure.
 
 ## Choose a Tracking Method That Matches the Behavior
 
@@ -26,7 +26,7 @@ A useful tracking system distinguishes among several types of records:
 - **Measured value:** What numerical result was recorded, such as distance or another personally chosen metric?
 - **Reduction or avoidance:** How often did an unwanted behavior occur, rather than treating it as an action to complete?
 
-HabitSense supports completion, counts, timed activity, measured values, and habits that someone wants to quit. It also supports daily, weekly, monthly, and custom schedules. This matters because the meaning of a successful day depends on what a person originally intended to do.
+We built HabitSense to support completion, counts, timed activity, measured values, and habits that someone wants to quit. It also supports daily, weekly, monthly, and custom schedules. This matters because the meaning of a successful day depends on what a person originally intended to do.
 
 For example, a strength-training habit scheduled three times per week should not be judged as though it were a seven-day obligation. A sustainable tracker starts with a realistic definition of success, then evaluates progress against that definition.
 
@@ -34,7 +34,7 @@ For example, a strength-training habit scheduled three times per week should not
 
 An isolated daily result contains little context. A sequence of daily results can reveal regularity, gaps, changes in frequency, and the difference between an occasional interruption and a sustained shift in behavior.
 
-HabitSense presents this history through **Behavior Landscape**, a calendar-like view in which individual days become visual squares. Instead of relying entirely on a list of checkmarks, users can examine how activity is distributed across time. Day and month views are available in the free version; quarter, year, and all-time views belong to Pro.
+We present this history through **Behavior Landscape**, a calendar-like view in which individual days become visual squares. Instead of relying entirely on a list of checkmarks, users can examine how activity is distributed across time. Day and month views are available in the free version; quarter, year, and all-time views belong to Pro.
 
 Consider a reading habit. A month might show a consistent pattern on weekdays and a quieter weekend. That is more informative than a single streak number. The pattern could suggest that reading fits naturally into a workday commute or evening routine. It does not prove why the pattern exists, but it gives the person a concrete observation to test.
 
@@ -52,7 +52,7 @@ Completion rate is useful, but it should never be treated as a complete explanat
 
 Imagine that someone plans to study four days each week and completes three sessions. The useful observation is that three of four planned opportunities were met. Comparing this with a person who intended to study every day would be misleading unless the schedules and definitions of success were also considered.
 
-HabitSense includes **Completion Rate** and **Overall Attainment** to help users review progress by habit and by month. These measures answer related but distinct questions: how consistently actions are completed and how progress compares with intended targets. Their exact application depends on the habit's configuration and the app's rules.
+We included **Completion Rate** and **Overall Attainment** to help users review progress by habit and by month. These measures answer related but distinct questions: how consistently actions are completed and how progress compares with intended targets. Their exact application depends on the habit's configuration and the app's rules.
 
 Before interpreting any percentage, check the underlying schedule, target, and amount of available data. A few observations can produce a high percentage without establishing a reliable long-term pattern. Similarly, a temporary dip can reflect an unusually demanding week rather than a fundamental loss of commitment.
 
@@ -62,7 +62,7 @@ For practical decisions, compare similar periods and look for repeated changes r
 
 Two people can have the same completion rate yet face very different situations. One might be gradually building consistency with a manageable routine. The other might be maintaining the same rate while carrying an increasingly demanding set of habits.
 
-HabitSense includes two complementary concepts:
+We included two complementary concepts:
 
 - **Momentum** indicates the direction in which consistency is moving. The question is whether the pattern is improving, weakening, or otherwise changing—not simply whether the current result is high.
 - **Behavioral Load** helps describe how much the user's collection of habits is asking of them at a given time.
@@ -77,7 +77,7 @@ The purpose of measurement is to support better decisions, not to turn a complex
 
 Habit data becomes more useful when it can answer specific questions. Are weekday mornings easier than evenings? Does exercise tend to occur on the same days as an earlier bedtime? Do certain routines disappear during especially busy weeks?
 
-HabitSense can surface weekday patterns, times that tend to work, and habits that occur together. Its official description also emphasizes confidence levels for these observations. That distinction is important: a pattern detected from limited records is not automatically a dependable prediction.
+We designed HabitSense to surface weekday patterns, times that tend to work, and habits that occur together. We also show confidence levels for these observations. That distinction is important: a pattern detected from limited records is not automatically a dependable prediction.
 
 A disciplined way to examine an apparent pattern is:
 
@@ -97,7 +97,7 @@ Conventional streak-based tracking often treats a missed day as a sharp break be
 
 Recovery is a normal part of maintaining routines. People get sick, travel, take time off, encounter deadlines, and adjust priorities. A tracker that recognizes only uninterrupted performance risks discouraging the very behavior it is intended to support.
 
-HabitSense explicitly tracks how a person returns after interruptions. It also offers **Free Day**, a way to intentionally skip a day without pulling down the associated numbers, and private **Day Notes** for recording useful context about a particular habit on a particular day.
+We designed HabitSense to track how a person returns after interruptions. It also offers **Free Day**, a way to intentionally skip a day without pulling down the associated numbers, and private **Day Notes** for recording useful context about a particular habit on a particular day.
 
 A practical recovery plan can be simple. Define the minimum version of an activity, identify a realistic next opportunity, and resume without trying to compensate for every missed session. For a reading habit, this may mean restarting with five minutes rather than demanding an hour. For exercise, it may mean returning to the next planned session rather than doubling the workload.
 
@@ -121,7 +121,7 @@ One habit does not necessarily determine an outcome. Learning a language, improv
 
 A useful behavior record supports reflection, not merely storage. After several weeks or months, it becomes possible to compare periods and examine whether a deliberate change coincided with a different pattern.
 
-HabitSense includes **Behavior Lab**, which lets users write down an idea and compare subsequent records, as well as **Year in Behavior**, which reviews changes, phases, and recovery over longer periods. The full yearly review is a Pro feature.
+We included **Behavior Lab**, which lets users write down an idea and compare subsequent records, as well as **Year in Behavior**, which reviews changes, phases, and recovery over longer periods. The full yearly review is a Pro feature.
 
 A personal experiment might ask whether a shorter evening routine is easier to maintain than a longer one. The experiment should have a defined change, a reasonable observation window, and a clear measure of what counts as improvement. It should also acknowledge limitations: daily behavior is affected by many variables, and an apparent improvement does not prove causation.
 
@@ -133,9 +133,9 @@ The most useful review is one that leads to a small, testable decision about wha
 
 Habit records can disclose sensitive aspects of daily life, including schedules, routines, and personal priorities. Privacy therefore matters even when the underlying information does not seem sensitive at first glance.
 
-HabitSense describes itself as a local-first application with no required account, no ads, no tracking, and no third-party SDKs. Its habit metrics are calculated on the device according to defined rules. The App Store privacy disclosure states that the developer does not collect data from the app; as with all such disclosures, this information is supplied by the developer.
+We designed HabitSense as a local-first application with no required account, no ads, no tracking, and no third-party SDKs. Its habit metrics are calculated on the device according to defined rules. We do not collect user data from HabitSense, as reflected in our App Store privacy disclosure. That disclosure describes our practices and should still be considered alongside device security and optional backup choices.
 
-Records remain on the device, while optional backups can be saved to the user's own iCloud Drive. The app also supports CSV, PDF, and backup-file exports, along with an option to erase local records in Settings.
+Records remain on the device, while users can optionally back up to their own iCloud Drive. We also provide CSV, PDF, and backup-file exports, along with an option to erase records from Settings.
 
 There is an important practical distinction between privacy and backup. Keeping information local reduces dependence on a remote service, but it also makes backup decisions more important. A user who wants long-term records should periodically verify that an appropriate backup exists and can be recovered. Device security, account security for optional backups, and the handling of exported files all remain relevant.
 
@@ -145,7 +145,7 @@ Privacy-first software works best when its data controls are clear and users und
 
 A tracking method that demands too much attention eventually becomes difficult to maintain. An efficient daily workflow should require only a brief action to record what happened, with deeper analysis reserved for deliberate review sessions.
 
-HabitSense supports one-tap recording, a customizable **Today Ring**, reminders informed by observed completion times, widgets, and Shortcuts. It also includes a library of more than 240 icons across 14 categories, helping users distinguish habits visually.
+We built HabitSense to support one-tap recording, a customizable **Today Ring**, reminders informed by observed completion times, widgets, and Shortcuts. It also includes a library of more than 240 icons across 14 categories, helping users distinguish habits visually.
 
 A practical rhythm is to record an activity when it happens, spend a short period reviewing the current week, and examine larger patterns at the end of each month. This separates action from analysis. The tracking process remains lightweight, while periodic review produces the context needed to refine a routine.
 
@@ -160,6 +160,11 @@ HabitSense's free version allows up to three habits and includes its core tracki
 This division makes the decision relatively straightforward: someone experimenting with a small number of daily routines can begin with basic tracking and monthly review. Someone maintaining many habits or evaluating longer-term relationships between them may place more value on extended analysis.
 
 Regardless of the tool or tier, the quality of the habit definitions, the realism of the schedule, and the consistency of recordkeeping matter more than the volume of available statistics.
+
+## Related Practical Guides
+
+- [How to Start Habit Tracking: A Simple Three-Habit Plan](/blog/22-start-habit-tracker-three-habits-beginner)
+- [HabitSense Free vs. Pro: Which Habit Tracking Features Do You Need?](/blog/47-habitsense-free-vs-pro-habit-tracker-features)
 
 ## The Bottom Line
 

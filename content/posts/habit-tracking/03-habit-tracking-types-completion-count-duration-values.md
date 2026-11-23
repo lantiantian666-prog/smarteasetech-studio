@@ -6,9 +6,11 @@ date: "November 2026"
 
 ## Not Every Habit Is a Checkbox
 
+We made multiple record types available in HabitSense because different behaviors deserve different units; a quick checkbox should not be the only vocabulary of progress.
+
 Checking off a task answers one narrow question: did it happen? That is sufficient for many routines, but not for every behavior. Reading, practicing an instrument, reducing an unwanted action, and measuring a training result produce different kinds of evidence. Treating them all as simple completion records can erase the information that matters.
 
-HabitSense supports one-tap completion, counting, timing, measured values, and habits someone wants to quit. The important decision is not which control looks impressive. It is which record answers the question a person will eventually want to ask about progress.
+We built HabitSense to support one-tap completion, counting, timing, measured values, and habits someone wants to quit. The important decision is not which control looks impressive. It is which record answers the question a person will eventually want to ask about progress.
 
 ## Use Binary Completion for Clearly Defined Actions
 
@@ -59,6 +61,11 @@ Focus on observing the behavior before making aggressive changes. A short baseli
 5. Is the intended direction less frequent or absent? Define a **reduction/quit** habit and select a fitting unit.
 
 Review the choice after a few weeks. If the data cannot answer a useful question, the measure may be wrong. The goal is to produce a record that is both easy to maintain and accurate enough to guide a decision.
+
+## Related Practical Guides
+
+- [The Two-Minute Habit Method: Start Small and Track Honestly](/blog/25-two-minute-habit-smallest-viable-action)
+- [Habit Tracking Data Quality: Avoid Misleading Progress Charts](/blog/45-habit-tracking-data-quality-missing-entries)
 
 ## The Bottom Line
 

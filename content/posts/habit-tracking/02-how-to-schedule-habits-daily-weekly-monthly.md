@@ -6,9 +6,11 @@ date: "November 2026"
 
 ## Why the Right Habit Schedule Matters More Than a Perfect Streak
 
+Our scheduling choices in HabitSense follow the same principle: a tracker should measure the commitment a person actually made, rather than impose an arbitrary everyday standard.
+
 A habit schedule is a promise about *when an action is expected*, not a judgment about how disciplined someone is. That distinction prevents a surprisingly common measurement error: evaluating a twice-weekly activity as though it should occur every day. A useful habit tracker must respect the planned frequency before interpreting misses, completion, or progress.
 
-HabitSense supports daily, weekly, monthly, and custom schedules. That gives users room to track fundamentally different behaviors without forcing them into a seven-day checklist. A short evening reset might happen daily; strength training might happen three times a week; a household safety check might be monthly. Their schedules should differ because their purposes differ.
+We built HabitSense to support daily, weekly, monthly, and custom schedules. That gives users room to track fundamentally different behaviors without forcing them into a seven-day checklist. A short evening reset might happen daily; strength training might happen three times a week; a household safety check might be monthly. Their schedules should differ because their purposes differ.
 
 ## Choose Daily Scheduling for Small, Repeatable Actions
 
@@ -26,7 +28,7 @@ The key is to distinguish *frequency* from *timing*. Three sessions per week des
 
 ## Monthly and Custom Schedules Prevent False Negatives
 
-Some responsible activities are too infrequent for daily or weekly tracking. A monthly finance review, personal archive cleanup, or quarterly planning ritual can be useful precisely because it is periodic. HabitSense offers monthly and custom schedules, enabling a record that matches the actual obligation.
+Some responsible activities are too infrequent for daily or weekly tracking. A monthly finance review, personal archive cleanup, or quarterly planning ritual can be useful precisely because it is periodic. We offer monthly and custom schedules, enabling a record that matches the actual obligation.
 
 Use a monthly schedule when the month is the natural unit of work. Use custom scheduling when availability follows a recurring pattern such as weekdays, selected training days, or another intentional cadence. Avoid making a rarely occurring action appear "overdue" on every irrelevant day.
 
@@ -44,7 +46,7 @@ These are illustrative choices, not universal prescriptions. A suitable cadence 
 
 Before starting, write down four things: the behavior, the schedule, the minimum acceptable version, and any legitimate exceptions. For example: "Study vocabulary for at least ten minutes, Monday through Thursday, except during planned vacation." This prevents a tracker from turning into an argument with yesterday's self.
 
-HabitSense includes **Free Day**, intended for deliberately taking a day off without reducing associated numbers. That is different from repeatedly relabeling inconvenient misses after the fact. Planned rest is a legitimate design choice; changing history to preserve appearances is not a useful analytical practice.
+We included **Free Day**, intended for deliberately taking a day off without reducing associated numbers. That is different from repeatedly relabeling inconvenient misses after the fact. Planned rest is a legitimate design choice; changing history to preserve appearances is not a useful analytical practice.
 
 When looking at completion rates, review them relative to scheduled opportunities rather than simply dividing by all calendar days. Do not assume a particular formula inside the app; the general principle is that the intended schedule changes the meaning of the result.
 
@@ -65,6 +67,11 @@ Make one adjustment at a time. Reducing four sessions to three, for example, cha
 - **Changing targets mid-review:** Comparing two periods as though their expectations were identical when they were not.
 
 A well-defined routine creates meaningful evidence. An unrealistic one mostly creates noise.
+
+## Related Practical Guides
+
+- [How to Start Habit Tracking: A Simple Three-Habit Plan](/blog/22-start-habit-tracker-three-habits-beginner)
+- [Habit Tracking for Shift Workers: Routines Without Fixed Hours](/blog/28-habit-tracker-for-shift-workers-irregular-hours)
 
 ## The Bottom Line
 

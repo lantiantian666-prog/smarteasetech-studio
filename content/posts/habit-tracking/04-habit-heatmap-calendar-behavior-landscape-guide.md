@@ -6,6 +6,8 @@ date: "November 2026"
 
 ## What a Habit Heatmap Reveals That Streaks Cannot
 
+We built Behavior Landscape around this idea: a visual history is useful when it reveals distribution and interruptions, not when it pressures people to fill every square.
+
 A streak compresses a history into one number. A habit heatmap preserves the sequence. Each day occupies a position on a calendar, making timing, clusters, gaps, and changes in regularity visible. When someone asks whether a routine is sustainable, the distribution of actions may be more useful than the length of the longest uninterrupted run.
 
 HabitSense calls its calendar-style visualization **Behavior Landscape**. The App Store description presents habits as a picture made from daily squares. Day and month views are available in the free version, while quarter, year, and all-time views are Pro features. The longer views matter when the question is seasonal change rather than this week's result.
@@ -30,7 +32,7 @@ Before comparing two periods, confirm that the underlying habit definition and s
 
 One of the most important interpretation problems is the difference between *nothing was recorded* and *the behavior was definitely not performed*. People sometimes forget to log an action, have an interruption, or leave a habit inactive during a planned break. These situations do not carry identical meaning.
 
-Keep recording simple and use notes when a missing entry has unusual context. HabitSense provides **Day Notes** for private observations and **Free Day** for intentionally taking a day off without reducing associated numbers. Those features help maintain honest records while respecting the realities of a flexible schedule.
+Keep recording simple and use notes when a missing entry has unusual context. We provide **Day Notes** for private observations and **Free Day** for intentionally taking a day off without reducing associated numbers. Those features help maintain honest records while respecting the realities of a flexible schedule.
 
 Do not retroactively fill blank dates based on vague memory just to make the picture look consistent. A transparent data gap is more useful than fabricated precision.
 
@@ -63,6 +65,11 @@ For a writing habit, an experiment could be moving Wednesday writing from evenin
 The most useful result of a heatmap review is a small, testable change. If the same missed opportunity appears every Thursday, try a different day rather than demanding more discipline. If activity is consistent but low, consider a modest increase only when it serves the larger goal. If a new commitment disrupts several habits, reducing behavioral load may be more sensible than adding reminders.
 
 A landscape works especially well alongside completion measures, momentum, and notes, because each layer contributes a different perspective: timing, volume, direction, and context. None should be interpreted as the complete truth about a person.
+
+## Related Practical Guides
+
+- [Monthly Habit Audit: What to Keep, Change, or Stop](/blog/43-monthly-habit-audit-review-template)
+- [Quarterly vs. Yearly Habit Reviews: What Each Time Frame Reveals](/blog/44-quarterly-yearly-habit-trends-review)
 
 ## The Bottom Line
 

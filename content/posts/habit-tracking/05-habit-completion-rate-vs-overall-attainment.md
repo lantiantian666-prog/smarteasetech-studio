@@ -6,9 +6,11 @@ date: "November 2026"
 
 ## Two Progress Measures Can Answer Different Questions
 
+We include both Completion Rate and Overall Attainment in HabitSense because a single headline percentage cannot explain every kind of goal.
+
 A productivity percentage feels objective, but it is only useful if the underlying question is clear. Did the person show up when planned? Did they reach the intended amount of work? Those are different questions, especially for habits measured by counts, duration, or numeric values.
 
-HabitSense includes **Completion Rate** and **Overall Attainment** in its behavior analytics. The public feature description does not specify proprietary calculation formulas, so the examples below explain the *general analytical distinction* rather than asserting an exact in-app implementation. That distinction helps users read any progress dashboard more critically.
+We included **Completion Rate** and **Overall Attainment** in its behavior analytics. The public feature description does not specify proprietary calculation formulas, so the examples below explain the *general analytical distinction* rather than asserting an exact in-app implementation. That distinction helps users read any progress dashboard more critically.
 
 ## Completion Rate Is About Meeting Scheduled Opportunities
 
@@ -68,6 +70,11 @@ A strong review produces one change to test, plus a date to reconsider it. Avoid
 - What is the smallest useful adjustment for next month?
 
 The answer may be to retain the schedule and observe longer. Data does not always demand immediate intervention.
+
+## Related Practical Guides
+
+- [Weekly Habit Review: Seven Questions to Improve Your Routine](/blog/42-weekly-habit-review-questions-checklist)
+- [Habit Tracking Data Quality: Avoid Misleading Progress Charts](/blog/45-habit-tracking-data-quality-missing-entries)
 
 ## The Bottom Line
 

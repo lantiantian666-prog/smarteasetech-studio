@@ -6,6 +6,8 @@ date: "November 2026"
 
 ## Momentum Is Direction, Not Just a High Score
 
+In HabitSense, we designed Momentum as a direction-of-change signal rather than a moral grade on personal discipline.
+
 A habit can be performing well but gradually slipping, or still developing while becoming more dependable. A single completion percentage cannot distinguish these stories. The idea of **habit momentum** is to focus on the *direction of consistency*: how the current pattern is changing relative to earlier behavior.
 
 HabitSense lists Momentum among its on-device analytics. It does not publish the exact calculation in the App Store description, so it would be misleading to present an invented numerical formula as the app's algorithm. The useful concept is simpler: a trend provides information that a static result cannot.
@@ -57,6 +59,11 @@ The aim is not to maximize every metric. It is to find a level of commitment tha
 At the end of each week, briefly record: the scheduled opportunities, actual participation, major disruptions, and one short explanation of what helped. After four weeks, compare the sequence rather than only the average.
 
 Ask whether the most recent week is genuinely more stable, whether breaks are becoming shorter, and whether the habit feels more practical to perform. If records are thin or circumstances vary dramatically, postpone a strong conclusion. That restraint is a feature of good analysis.
+
+## Related Practical Guides
+
+- [Monthly Habit Audit: What to Keep, Change, or Stop](/blog/43-monthly-habit-audit-review-template)
+- [Habit Insights and Confidence Levels: When to Trust a Pattern](/blog/46-habit-insights-confidence-levels-patterns)
 
 ## The Bottom Line
 
