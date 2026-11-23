@@ -102,6 +102,12 @@ export default async function BlogPost({ params }: any) {
     ctaAppIcon = "/invoicehive-icon.png";
     ctaAppLink = "https://apps.apple.com/app/id6800766422";
     ctaColorTheme = "cyan";
+  } else if (article.category === "habit-tracking") {
+    ctaAppName = "HabitSense";
+    ctaAppSlogan = "Track your habits in a tap. Understand your patterns, momentum, and recovery—privately on your device.";
+    ctaAppIcon = "/habitsense-icon.png";
+    ctaAppLink = "https://apps.apple.com/us/app/habitsense-habit-tracker/id6832557919";
+    ctaColorTheme = "indigo";
   } else {
     ctaAppName = "Pray Verses";
     ctaAppSlogan = "The private, offline prayer journal that matches Scripture to what's actually on your heart.";

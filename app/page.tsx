@@ -191,6 +191,63 @@ export default function Home() {
         </div>
       </section>
 
+      {/* 产品 4：HabitSense (已正式上架 - 靛蓝主题) */}
+      <section className="p-8 sm:p-12 rounded-3xl bg-[#05221b]/40 border border-indigo-900/40 backdrop-blur-sm grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="space-y-6">
+          <div className="flex items-center gap-3">
+            <Image 
+              src="/habitsense-icon.png" 
+              alt="HabitSense Icon" 
+              width={56} 
+              height={56} 
+              className="rounded-2xl shadow-md border border-indigo-500/30"
+            />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 text-xs font-medium">
+              Habit & Routine Analytics
+            </div>
+          </div>
+          <h2 className="text-3xl font-bold text-white tracking-tight flex items-center gap-3">
+            HabitSense
+          </h2>
+          <p className="text-slate-300 font-light leading-relaxed">
+            Track your habits in a tap without streak pressure. Explore Behavior Landscapes, measure momentum and behavioral load, plan resilient recovery, and uncover weekly routine patterns — 100% locally and privately on your device.
+          </p>
+          <div className="pt-2">
+            <a 
+              href="https://apps.apple.com/us/app/habitsense-habit-tracker/id6832557919" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="inline-flex items-center gap-3 bg-indigo-600 hover:bg-indigo-500 text-white px-8 py-3.5 rounded-full font-medium shadow-lg transition-all duration-300 group"
+            >
+              <span>Download on the App Store</span>
+              <span className="group-hover:translate-x-0.5 transition-transform">&rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        {/* HabitSense 3张真实截图展示 (增加点击放大交互) */}
+        <div className="grid grid-cols-3 gap-3">
+          <div 
+            onClick={() => setEnlargedImg('/habitsense-1.png')}
+            className="cursor-zoom-in rounded-2xl overflow-hidden border border-indigo-500/20 bg-slate-950 shadow-xl transform hover:-translate-y-1 transition-transform"
+          >
+            <Image src="/habitsense-1.png" alt="HabitSense Screenshot 1" width={300} height={600} className="w-full h-auto object-cover" />
+          </div>
+          <div 
+            onClick={() => setEnlargedImg('/habitsense-2.png')}
+            className="cursor-zoom-in rounded-2xl overflow-hidden border border-indigo-500/20 bg-slate-950 shadow-xl transform translate-y-4 hover:translate-y-3 transition-transform"
+          >
+            <Image src="/habitsense-2.png" alt="HabitSense Screenshot 2" width={300} height={600} className="w-full h-auto object-cover" />
+          </div>
+          <div 
+            onClick={() => setEnlargedImg('/habitsense-3.png')}
+            className="cursor-zoom-in rounded-2xl overflow-hidden border border-indigo-500/20 bg-slate-950 shadow-xl transform hover:-translate-y-1 transition-transform"
+          >
+            <Image src="/habitsense-3.png" alt="HabitSense Screenshot 3" width={300} height={600} className="w-full h-auto object-cover" />
+          </div>
+        </div>
+      </section>
+
       {/* 🚀 全屏图片放大遮罩层 (Lightbox) */}
       {enlargedImg && (
         <div 

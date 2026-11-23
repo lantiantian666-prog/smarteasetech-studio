@@ -33,7 +33,7 @@ function getAllPosts() {
             }
             const readTime = `${Math.ceil(wordCount / 200)} min read`;
 
-            // 🚀 强制锁定排序权重：pet = 1 (最前), prayer = 2 (中间), invoice = 3 (下面)
+            // 🚀 强制锁定排序权重：pet = 1, prayer = 2, invoice = 3, habit-tracking = 4
             let categoryName = "Insights";
             let sortOrder = 99;
             if (category === "pet") {
@@ -45,6 +45,9 @@ function getAllPosts() {
             } else if (category === "invoice") {
               categoryName = "Business Utility";
               sortOrder = 3;
+            } else if (category === "habit-tracking") {
+              categoryName = "Habit & Routine";
+              sortOrder = 4;
             }
 
             // 多保险标题抓取：YAML 里的 title -> heading -> 或者去正文里抓取第一个 #
@@ -77,7 +80,7 @@ function getAllPosts() {
     });
   }
 
-  // 🚀 严格按权重排序：宠物(1) -> 祷告(2) -> 发票(3)
+  // 🚀 严格按权重排序：宠物(1) -> 祷告(2) -> 发票(3) -> 习惯追踪(4)
   allPosts.sort((a, b) => a.sortOrder - b.sortOrder);
 
   return allPosts;
@@ -85,7 +88,7 @@ function getAllPosts() {
 
 export const metadata = {
   title: "Blog & Resources | SmartEaseTech Studio",
-  description: "Explore our expert guides on pet nutrition, professional invoicing, and private prayer journaling.",
+  description: "Explore our expert guides on pet nutrition, professional invoicing, private prayer journaling, and mindful habit tracking.",
 };
 
 export default function BlogIndexPage() {
@@ -120,6 +123,11 @@ export default function BlogIndexPage() {
             borderHoverStyle = "hover:border-cyan-500/40";
             titleHoverStyle = "group-hover:text-cyan-400";
             linkHoverStyle = "text-cyan-400/80 group-hover:text-cyan-400";
+          } else if (article.category === "habit-tracking") {
+            badgeStyle = "bg-indigo-500/10 text-indigo-300 border border-indigo-500/20";
+            borderHoverStyle = "hover:border-indigo-500/40";
+            titleHoverStyle = "group-hover:text-indigo-400";
+            linkHoverStyle = "text-indigo-400/80 group-hover:text-indigo-400";
           } else {
             badgeStyle = "bg-amber-500/10 text-amber-300 border border-amber-500/20";
             borderHoverStyle = "hover:border-amber-500/40";

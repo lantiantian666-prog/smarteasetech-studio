@@ -82,7 +82,7 @@ export default function SupportPage() {
           Our App Ecosystem
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <a 
             href="https://apps.apple.com/app/id6782809353" 
             target="_blank" 
@@ -125,6 +125,23 @@ export default function SupportPage() {
             </h3>
             <p className="text-xs text-slate-400">
               Local-first invoicing and billing utility for independent creators.
+            </p>
+          </a>
+
+          <a 
+            href="https://apps.apple.com/us/app/habitsense-habit-tracker/id6832557919" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="group block p-6 rounded-2xl bg-slate-950/60 border border-indigo-500/20 space-y-3 hover:bg-slate-900/80 hover:border-indigo-500/50 transition-all duration-300 cursor-pointer"
+          >
+            <h3 className="font-bold text-indigo-400 group-hover:text-indigo-300 transition-colors flex items-center justify-between">
+              HabitSense
+              <svg viewBox="0 0 384 512" width="12" height="12" fill="currentColor" className="opacity-0 group-hover:opacity-100 transition-opacity">
+                <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 51 17.9 76.2 17.9 48.6-.1 90.4-82.5 102.6-119.3-39-19.9-50-46.7-50-81.2zM211 118.8c34.5-38.3 22-81.3 12-96.1-33 1.1-66.5 32.1-66.5 66.2 0 31.8 23.6 57 44.5 57 5.4 0 10.1-.6 10-27.1z"/>
+              </svg>
+            </h3>
+            <p className="text-xs text-slate-400">
+              Private, local-first habit tracker focused on patterns, momentum, and recovery.
             </p>
           </a>
         </div>
