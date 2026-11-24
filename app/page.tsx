@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
 import ScreenshotGrid from './components/ScreenshotGrid';
 
 export const metadata: Metadata = {
@@ -41,7 +42,12 @@ export default function Home() {
             </div>
           </div>
           <h2 className="text-3xl font-bold text-white tracking-tight">
-            PawOptima Steward
+            <Link
+              href="/apps/pawoptima"
+              className="hover:text-emerald-300 transition-colors"
+            >
+              PawOptima Steward
+            </Link>
           </h2>
           <p className="text-slate-300 font-light leading-relaxed">
             The complete, science-based feeding and health system for dogs and
@@ -49,17 +55,23 @@ export default function Home() {
             nutrition labels with OCR, and monitor growth curves across 206
             breeds — 100% offline and private.
           </p>
-          <div className="pt-2">
+          <div className="pt-2 flex flex-wrap items-center gap-3">
+            <Link
+              href="/apps/pawoptima"
+              className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white px-7 py-3.5 rounded-full font-medium shadow-lg transition-all duration-300 group"
+            >
+              <span>Learn More</span>
+              <span className="group-hover:translate-x-0.5 transition-transform">
+                &rarr;
+              </span>
+            </Link>
             <a
               href="https://apps.apple.com/app/id6782809353"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 bg-emerald-600 hover:bg-emerald-500 text-white px-8 py-3.5 rounded-full font-medium shadow-lg transition-all duration-300 group"
+              className="inline-flex items-center gap-2 border border-emerald-500/30 bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-200 px-6 py-3.5 rounded-full text-sm font-medium transition-colors"
             >
-              <span>Download on the App Store</span>
-              <span className="group-hover:translate-x-0.5 transition-transform">
-                &rarr;
-              </span>
+              App Store
             </a>
           </div>
         </div>
@@ -99,7 +111,12 @@ export default function Home() {
             </div>
           </div>
           <h2 className="text-3xl font-bold text-white tracking-tight">
-            Pray Verses
+            <Link
+              href="/apps/pray-verses"
+              className="hover:text-amber-300 transition-colors"
+            >
+              Pray Verses
+            </Link>
           </h2>
           <p className="text-slate-300 font-light leading-relaxed">
             The private, offline prayer journal that matches Scripture to
@@ -107,17 +124,23 @@ export default function Home() {
             and category, track answered prayers over time, and experience
             complete peace of mind with local encryption.
           </p>
-          <div className="pt-2">
+          <div className="pt-2 flex flex-wrap items-center gap-3">
+            <Link
+              href="/apps/pray-verses"
+              className="inline-flex items-center gap-2 bg-amber-600 hover:bg-amber-500 text-white px-7 py-3.5 rounded-full font-medium shadow-lg transition-all duration-300 group"
+            >
+              <span>Learn More</span>
+              <span className="group-hover:translate-x-0.5 transition-transform">
+                &rarr;
+              </span>
+            </Link>
             <a
               href="https://apps.apple.com/app/id6788009023"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 bg-amber-600 hover:bg-amber-500 text-white px-8 py-3.5 rounded-full font-medium shadow-lg transition-all duration-300 group"
+              className="inline-flex items-center gap-2 border border-amber-500/30 bg-amber-500/10 hover:bg-amber-500/20 text-amber-200 px-6 py-3.5 rounded-full text-sm font-medium transition-colors"
             >
-              <span>Download on the App Store</span>
-              <span className="group-hover:translate-x-0.5 transition-transform">
-                &rarr;
-              </span>
+              App Store
             </a>
           </div>
         </div>
@@ -156,8 +179,13 @@ export default function Home() {
               Business Utility
             </div>
           </div>
-          <h2 className="text-3xl font-bold text-white tracking-tight flex items-center gap-3">
-            InvoiceHive
+          <h2 className="text-3xl font-bold text-white tracking-tight">
+            <Link
+              href="/apps/invoicehive"
+              className="hover:text-cyan-300 transition-colors"
+            >
+              InvoiceHive
+            </Link>
           </h2>
           <p className="text-slate-300 font-light leading-relaxed">
             The local-first, privacy-focused invoicing and billing utility built
@@ -165,17 +193,23 @@ export default function Home() {
             clients, generate professional invoices, and keep your financial
             records securely on-device.
           </p>
-          <div className="pt-2">
+          <div className="pt-2 flex flex-wrap items-center gap-3">
+            <Link
+              href="/apps/invoicehive"
+              className="inline-flex items-center gap-2 bg-cyan-600 hover:bg-cyan-500 text-white px-7 py-3.5 rounded-full font-medium shadow-lg transition-all duration-300 group"
+            >
+              <span>Learn More</span>
+              <span className="group-hover:translate-x-0.5 transition-transform">
+                &rarr;
+              </span>
+            </Link>
             <a
               href="https://apps.apple.com/app/id6800766422"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 bg-cyan-600 hover:bg-cyan-500 text-white px-8 py-3.5 rounded-full font-medium shadow-lg transition-all duration-300 group"
+              className="inline-flex items-center gap-2 border border-cyan-500/30 bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-200 px-6 py-3.5 rounded-full text-sm font-medium transition-colors"
             >
-              <span>Download on the App Store</span>
-              <span className="group-hover:translate-x-0.5 transition-transform">
-                &rarr;
-              </span>
+              App Store
             </a>
           </div>
         </div>
@@ -214,8 +248,13 @@ export default function Home() {
               Habit &amp; Routine Analytics
             </div>
           </div>
-          <h2 className="text-3xl font-bold text-white tracking-tight flex items-center gap-3">
-            HabitSense
+          <h2 className="text-3xl font-bold text-white tracking-tight">
+            <Link
+              href="/apps/habitsense"
+              className="hover:text-indigo-300 transition-colors"
+            >
+              HabitSense
+            </Link>
           </h2>
           <p className="text-slate-300 font-light leading-relaxed">
             Track your habits in a tap without streak pressure. Explore Behavior
@@ -223,17 +262,23 @@ export default function Home() {
             recovery, and uncover weekly routine patterns — 100% locally and
             privately on your device.
           </p>
-          <div className="pt-2">
+          <div className="pt-2 flex flex-wrap items-center gap-3">
+            <Link
+              href="/apps/habitsense"
+              className="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white px-7 py-3.5 rounded-full font-medium shadow-lg transition-all duration-300 group"
+            >
+              <span>Learn More</span>
+              <span className="group-hover:translate-x-0.5 transition-transform">
+                &rarr;
+              </span>
+            </Link>
             <a
               href="https://apps.apple.com/us/app/habitsense-habit-tracker/id6832557919"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 bg-indigo-600 hover:bg-indigo-500 text-white px-8 py-3.5 rounded-full font-medium shadow-lg transition-all duration-300 group"
+              className="inline-flex items-center gap-2 border border-indigo-500/30 bg-indigo-500/10 hover:bg-indigo-500/20 text-indigo-200 px-6 py-3.5 rounded-full text-sm font-medium transition-colors"
             >
-              <span>Download on the App Store</span>
-              <span className="group-hover:translate-x-0.5 transition-transform">
-                &rarr;
-              </span>
+              App Store
             </a>
           </div>
         </div>

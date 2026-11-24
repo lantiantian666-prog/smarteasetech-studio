@@ -1,19 +1,29 @@
 import { MetadataRoute } from 'next';
 import fs from 'fs';
 import path from 'path';
+import { APPS_DATA } from './apps/data';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.smarteasetechstudio.app';
   const postsDirectory = path.join(process.cwd(), 'content/posts');
-  
-  // 默认加入固定核心页面
-  let routes: MetadataRoute.Sitemap = [
-    { url: baseUrl, lastModified: new Date() },
-    { url: `${baseUrl}/blog`, lastModified: new Date() },
-    { url: `${baseUrl}/support`, lastModified: new Date() },
+
+  // 1. 固定核心页面
+  const routes: MetadataRoute.Sitemap = [
+    { url: baseUrl, lastModified: new Date(), priority: 1.0 },
+    { url: `${baseUrl}/blog`, lastModified: new Date(), priority: 0.8 },
+    { url: `${baseUrl}/support`, lastModified: new Date(), priority: 0.6 },
   ];
 
-  // 动态扫描所有 Markdown 文章，确保带编号的 URL 原汁原味输出
+  // 2. 自动加入所有独立产品落地页 (/apps/*)
+  Object.keys(APPS_DATA).forEach((slug) => {
+    routes.push({
+      url: `${baseUrl}/apps/${slug}`,
+      lastModified: new Date(),
+      priority: 0.9,
+    });
+  });
+
+  // 3. 动态扫描所有 Markdown 文章，确保带编号的 URL 原汁原味输出
   if (fs.existsSync(postsDirectory)) {
     const categories = fs.readdirSync(postsDirectory);
     categories.forEach((category) => {
@@ -26,6 +36,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
             routes.push({
               url: `${baseUrl}/blog/${slug}`,
               lastModified: new Date(),
+              priority: 0.7,
             });
           }
         });
