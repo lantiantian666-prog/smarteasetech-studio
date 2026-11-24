@@ -6,7 +6,16 @@ import matter from 'gray-matter';
 
 function getAllPosts() {
   const postsDirectory = path.join(process.cwd(), 'content/posts');
-  let allPosts: any[] = [];
+  const allPosts: {
+    id: string;
+    category: string;
+    sortOrder: number;
+    categoryName: string;
+    title: string;
+    subtitle: string;
+    date: string;
+    readTime: string;
+  }[] = [];
 
   if (fs.existsSync(postsDirectory)) {
     const categories = fs.readdirSync(postsDirectory);
@@ -26,7 +35,7 @@ function getAllPosts() {
             let wordCount = 1000;
             if (data.word_count_estimate) {
               const match = String(data.word_count_estimate).match(/\d+/);
-              if (match) wordCount = parseInt(match[0]);
+              if (match) wordCount = parseInt(match[0], 10);
             } else {
               wordCount = content.length / 3;
             }
@@ -54,7 +63,7 @@ function getAllPosts() {
               if (matchTitle && matchTitle[1]) {
                 articleTitle = matchTitle[1].trim();
               } else {
-                articleTitle = slug.replace(/-/g, ' ');
+                articleTitle = slug.replace(/[-_]/g, ' ');
               }
             }
 
@@ -82,6 +91,33 @@ function getAllPosts() {
   return allPosts;
 }
 
+const TOPIC_PILLS = [
+  {
+    href: '/blog/category/pet',
+    label: 'Pet Care (PawOptima)',
+    style:
+      'bg-emerald-500/10 text-emerald-300 border-emerald-500/25 hover:bg-emerald-500/20',
+  },
+  {
+    href: '/blog/category/prayer',
+    label: 'Prayer & Faith (Pray Verses)',
+    style:
+      'bg-amber-500/10 text-amber-300 border-amber-500/25 hover:bg-amber-500/20',
+  },
+  {
+    href: '/blog/category/invoice',
+    label: 'Invoicing (InvoiceHive)',
+    style:
+      'bg-cyan-500/10 text-cyan-300 border-cyan-500/25 hover:bg-cyan-500/20',
+  },
+  {
+    href: '/blog/category/habit-tracking',
+    label: 'Habits & Routines (HabitSense)',
+    style:
+      'bg-indigo-500/10 text-indigo-300 border-indigo-500/25 hover:bg-indigo-500/20',
+  },
+];
+
 export const metadata: Metadata = {
   title: 'Blog & Resources',
   description:
@@ -96,7 +132,7 @@ export default function BlogIndexPage() {
 
   return (
     <div className="max-w-5xl mx-auto px-6 py-12">
-      <div className="text-center max-w-2xl mx-auto mb-16">
+      <div className="text-center max-w-2xl mx-auto mb-12">
         <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-white mb-4">
           Insights &amp;{' '}
           <span className="bg-gradient-to-r from-amber-300 to-emerald-400 bg-clip-text text-transparent">
@@ -107,6 +143,19 @@ export default function BlogIndexPage() {
           In-depth guides, veterinary nutrition science, professional invoicing
           tips, and reflections on private, local-first software engineering.
         </p>
+
+        {/* 四个独立专题频道入口 */}
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+          {TOPIC_PILLS.map((pill) => (
+            <Link
+              key={pill.href}
+              href={pill.href}
+              className={`px-4 py-2 rounded-full border text-xs font-medium transition-colors ${pill.style}`}
+            >
+              {pill.label} &rarr;
+            </Link>
+          ))}
+        </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

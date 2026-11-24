@@ -14,12 +14,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/support`, lastModified: new Date(), priority: 0.6 },
   ];
 
-  // 2. 自动加入所有独立产品落地页 (/apps/*)
-  Object.keys(APPS_DATA).forEach((slug) => {
+  // 2. 自动加入所有独立产品落地页 (/apps/*) 与博客专题页 (/blog/category/*)
+  Object.values(APPS_DATA).forEach((app) => {
     routes.push({
-      url: `${baseUrl}/apps/${slug}`,
+      url: `${baseUrl}/apps/${app.slug}`,
       lastModified: new Date(),
       priority: 0.9,
+    });
+    routes.push({
+      url: `${baseUrl}/blog/category/${app.blogCategory}`,
+      lastModified: new Date(),
+      priority: 0.8,
     });
   });
 
