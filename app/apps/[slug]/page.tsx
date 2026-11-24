@@ -10,7 +10,6 @@ import { APPS_DATA, type AppTheme } from '../data';
 
 const SITE_URL = 'https://www.smarteasetechstudio.app';
 
-// 静态映射 Tailwind 主题色（避免动态拼接导致样式丢失）
 const THEME_STYLES: Record<
   AppTheme,
   {
@@ -71,7 +70,6 @@ const THEME_STYLES: Record<
   },
 };
 
-// 自动读取本产品所属分类下的前 5 篇真实博客文章（严格隔离、零死链）
 function getCategoryGuides(blogCategory: string) {
   const categoryDir = path.join(process.cwd(), 'content/posts', blogCategory);
   if (!fs.existsSync(categoryDir)) return [];
@@ -157,7 +155,6 @@ export default async function AppLandingPage({
   const guides = getCategoryGuides(app.blogCategory);
   const pageUrl = `${SITE_URL}/apps/${app.slug}`;
 
-  // 合并输出 SoftwareApplication + FAQPage + BreadcrumbList 结构化数据
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -279,12 +276,22 @@ export default async function AppLandingPage({
                 &rarr;
               </span>
             </a>
-            <a
-              href="#compare"
-              className="inline-flex items-center px-6 py-3.5 rounded-full border border-white/15 bg-white/5 hover:bg-white/10 text-sm font-medium text-slate-200 transition-colors"
-            >
-              See How It Compares
-            </a>
+            {app.slug === 'pawoptima' ? (
+              <Link
+                href="/tools/pet-calorie-calculator"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full border border-emerald-500/35 bg-emerald-500/10 hover:bg-emerald-500/20 text-sm font-medium text-emerald-200 transition-colors"
+              >
+                <span>Try Free Calorie Calculator</span>
+                <span>&rarr;</span>
+              </Link>
+            ) : (
+              <a
+                href="#compare"
+                className="inline-flex items-center px-6 py-3.5 rounded-full border border-white/15 bg-white/5 hover:bg-white/10 text-sm font-medium text-slate-200 transition-colors"
+              >
+                See How It Compares
+              </a>
+            )}
           </div>
 
           <ul className="flex flex-wrap gap-x-5 gap-y-2 pt-2 text-xs text-slate-400">
@@ -380,7 +387,7 @@ export default async function AppLandingPage({
         </div>
       </section>
 
-      {/* 4. 页面可见 FAQ（与 JSON-LD 共享数据源） */}
+      {/* 4. 页面可见 FAQ */}
       <section className="space-y-6">
         <h2 className="text-3xl font-bold tracking-tight text-white">
           Frequently Asked Questions
@@ -399,7 +406,7 @@ export default async function AppLandingPage({
         </dl>
       </section>
 
-      {/* 5. 精选垂类指南（自动拉取本 App 博客，严格隔离） */}
+      {/* 5. 精选垂类指南 */}
       {guides.length > 0 && (
         <section className="space-y-5">
           <h2 className="text-2xl font-bold tracking-tight text-white">
